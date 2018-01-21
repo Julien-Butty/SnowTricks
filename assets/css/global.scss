@@ -1,0 +1,32 @@
+// customize some Bootstrap variables
+$brand-primary: darken(#428bca, 20%);
+
+// the ~ allows you to reference things in node_modules
+@import '~bootstrap/scss/bootstrap';
+@import "~font-awesome/scss/font-awesome";
+
+.barre {
+  display: inline;
+  border-right: 1px solid gray; }
+
+/*Pour enlever la barre sur le dernier élément */
+.page_item page-item-20 {
+  border-right: none; }
+
+.thumbnail {
+  position: relative; }
+
+.caption {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%; }
+
+.imgBack {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 90vh;}
+
+.img-thumbnail {
+  border: none;
+  padding: 0px; }

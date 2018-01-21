@@ -9,11 +9,20 @@ use Symfony\Component\HttpFoundation\Response;
 class MainController extends Controller
 {
     /**
-     * @Route("/", name="main")
+     * @Route("/", name="homepage")
      */
-    public function index()
+    public function homepage()
     {
-        // replace this line with your own code!
-        return $this->render('@Maker/demoPage.html.twig', [ 'path' => str_replace($this->getParameter('kernel.project_dir').'/', '', __FILE__) ]);
+
+        $em = $this->getDoctrine()->getManager();
+
+       $tricks = $em->getRepository('App:Tricks')
+           ->findAllById();
+
+
+
+        return $this->render('Tricks/trickslist.html.twig',[
+            'tricks' => $tricks
+        ]);
     }
 }
