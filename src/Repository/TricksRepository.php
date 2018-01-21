@@ -13,16 +13,15 @@ class TricksRepository extends ServiceEntityRepository
         parent::__construct($registry, Tricks::class);
     }
 
-    /*
-    public function findBySomething($value)
+
+    public function findAllById()
     {
-        return $this->createQueryBuilder('t')
-            ->where('t.something = :value')->setParameter('value', $value)
-            ->orderBy('t.id', 'ASC')
+        return $this->createQueryBuilder('tricks')
+            ->orderBy('tricks.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+
 }

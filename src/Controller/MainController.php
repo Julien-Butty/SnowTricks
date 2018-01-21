@@ -13,7 +13,16 @@ class MainController extends Controller
      */
     public function homepage()
     {
-        // replace this line with your own code!
-        return $this->render('Tricks/trickslist.html.twig');
+
+        $em = $this->getDoctrine()->getManager();
+
+       $tricks = $em->getRepository('App:Tricks')
+           ->findAllById();
+
+
+
+        return $this->render('Tricks/trickslist.html.twig',[
+            'tricks' => $tricks
+        ]);
     }
 }
