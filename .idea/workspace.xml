@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c63f0965-760c-4f36-98a3-2a82fa759a3b" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/DataFixtures/ORM/LoadTricks.php" />
-      <change beforePath="$PROJECT_DIR$/.env.dist" afterPath="$PROJECT_DIR$/.env.dist" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/snowTricks.iml" afterPath="$PROJECT_DIR$/.idea/snowTricks.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/assets/css/global.scss" afterPath="$PROJECT_DIR$/assets/css/global.scss" />
-      <change beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" afterPath="$PROJECT_DIR$/config/bundles.php" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MainController.php" afterPath="$PROJECT_DIR$/src/Controller/MainController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Chat.php" afterPath="$PROJECT_DIR$/src/Entity/Chat.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Image.php" afterPath="$PROJECT_DIR$/src/Entity/Image.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Tricks.php" afterPath="$PROJECT_DIR$/src/Entity/Tricks.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" afterPath="$PROJECT_DIR$/src/Entity/User.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Video.php" afterPath="$PROJECT_DIR$/src/Entity/Video.php" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/TricksRepository.php" afterPath="$PROJECT_DIR$/src/Repository/TricksRepository.php" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" afterPath="$PROJECT_DIR$/symfony.lock" />
-      <change beforePath="$PROJECT_DIR$/templates/Tricks/trickslist.html.twig" afterPath="$PROJECT_DIR$/templates/Tricks/trickslist.html.twig" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" afterPath="$PROJECT_DIR$/templates/base.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -444,12 +426,12 @@
       <workItem from="1516019472980" duration="9993000" />
       <workItem from="1516124983715" duration="2274000" />
       <workItem from="1516292498661" duration="3391000" />
-      <workItem from="1516444122025" duration="8336000" />
+      <workItem from="1516444122025" duration="8602000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51889000" />
+    <option name="totallyTimeSpent" value="52155000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="970" extended-state="6" />
