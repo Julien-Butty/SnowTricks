@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraint as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ImageRepository")
@@ -20,6 +21,11 @@ class Image
      * @ORM\Column(type="string")
      */
     private $url;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Tricks", inversedBy="images")
+     */
+    private $trick;
 
     /**
      * @return mixed
@@ -56,22 +62,18 @@ class Image
     /**
      * @return mixed
      */
-    public function getTrickImage()
+    public function getTrick()
     {
-        return $this->trickImage;
+        return $this->trick;
     }
 
     /**
-     * @param mixed $trickImage
+     * @param mixed $trick
      */
-    public function setTrickImage($trickImage): void
+    public function setTrick($trick): void
     {
-        $this->trickImage = $trickImage;
+        $this->trick = $trick;
     }
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Tricks")
-     */
-    private $trickImage;
 
 }

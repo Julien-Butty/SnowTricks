@@ -1,28 +1,83 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {#{% for i in 0..2 %}#}
-        <div class="d-flex justify-content-around mt-2 ">
-            {#{% for i in  0..4 %}#}
-                <div class="card mb-3 " style="width: 18rem;">
-                    {% for trick in tricks %}
-                    <img class="card-img-top img-thumbnail"
-                         src="https://image.noelshack.com/fichiers/2018/02/5/1515759259-snowboarders-2089706-1920.jpg"
-                         alt="Card image cap">
-                    <div class="card-body p-2">
-                        <a href="#" class="card-link"><u>{{ trick.title }}</u></a>
-                        <a href="#" class="card-link float-right"><i class="fa fa-trash"></i></a>
-                        <a href="#" class="card-link float-right"><i class="fa fa-pencil"></i></a>
-                    </div>
-                        {% endfor %}
-                </div>
-            {#{% endfor %}#}
-        </div>
-        </div>
-    {#{% endfor %}#}
+            <div class="d-flex justify-content-around mt-2  ">
+    {% for trick in tricks %}
 
-    <div class="text-center pt-5">
-        <button type="submit" class="btn btn-primary"><i class="fa fa-spinner" aria-hidden="true"></i> Load more
-        </button>
+
+        <div class="card mb-3 " style="width: 18rem;">
+            {#{% for trick in tricks %}#}
+            <img class="card-img-top "
+                 src="https://image.noelshack.com/fichiers/2018/02/5/1515759259-snowboarders-2089706-1920.jpg"
+                 alt="Card image cap">
+            <div class="card-body p-2">
+                <a href="#" class="card-link ">{{ trick.title }}</a>
+                <a href="#" class="card-link float-right"><i class="fa fa-trash"></i></a>
+                <a href="#" class="card-link float-right"><i class="fa fa-pencil"></i></a>
+            </div>
+
+        </div>
+
+
+        {% if loop.index is divisible by (4) and not loop.last %}
+        </div>
+                <div class="d-flex justify-content-around mt-2  ">
+        {% endif %}
+
+
+
+    {% endfor %}
     </div>
+
+    <div class="container">
+        <div class="text-center pt-1">
+            <button id="loadMore" type="submit" class="btn btn-primary"><i class="fa fa-spinner" aria-hidden="true"></i>
+                Load more
+            </button>
+        </div>
+
+        <p class="totop">
+            <a href="#top">Back to top</a>
+        </p>
+    </div>
+
+
+
+
+
+{% endblock %}
+{% block javascript %}
+
+    {{ parent() }}
+    <script>
+        $(function () {
+            $("div.card.mb-3").hide();
+            $("div.card.mb-3").slice(0, 12).show();
+            $("#loadMore").on('click', function (e) {
+                e.preventDefault();
+                $("div.card.mb-3:hidden").slice(0, 4).show();
+                if ($("div.card.mb-3:hidden").length == 0) {
+                    $("#loadMore").fadeOut('slow');
+                }
+                $('html,body').animate({
+                    scrollTop: $(this).offset().top
+                }, 1500);
+            });
+        });
+        //
+        $('a[href="#top"]').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 600);
+            return false;
+        });
+
+        // $(window).scroll(function () {
+        //     if ($(this).scrollTop() > 50) {
+        //         $('.totop a').fadeIn();
+        //     } else {
+        //         $('.totop a').fadeOut();
+        //     }
+        // });
+    </script>
 {% endblock %}

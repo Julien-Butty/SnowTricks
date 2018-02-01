@@ -30,3 +30,7 @@ $brand-primary: darken(#428bca, 20%);
 .img-thumbnail {
   border: none;
   padding: 0px; }
+
+.textShad {
+  text-shadow: 1px 1px 2px black, 0 0 25px orange, 0 0 5px white;
+}

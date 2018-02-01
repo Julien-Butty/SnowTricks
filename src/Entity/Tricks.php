@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -30,6 +31,39 @@ class Tricks
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
      */
     private $user;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="trick")
+     */
+    private $images;
+
+    /**
+     * @return mixed
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
+
+    /**
+     * @param mixed $images
+     */
+    public function setImages($images): void
+    {
+        $this->images = $images;
+    }
+
+    public function addImage(Image $image)
+    {
+        $this->images->add($image);
+        $image->setTrick($this);
+    }
+
+    public function removeImage($image)
+    {
+        $this->images->removeElement($image);
+    }
 
     /**
      * @return mixed
