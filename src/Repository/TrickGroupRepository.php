@@ -13,16 +13,12 @@ class TrickGroupRepository extends ServiceEntityRepository
         parent::__construct($registry, TrickGroup::class);
     }
 
-    /*
-    public function findBySomething($value)
+
+    public function AlphabeticalOrder()
     {
-        return $this->createQueryBuilder('t')
-            ->where('t.something = :value')->setParameter('value', $value)
-            ->orderBy('t.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        return $this->createQueryBuilder('trick_group')
+            ->orderBy('trick_group.name', 'ASC');
+
     }
-    */
+
 }
