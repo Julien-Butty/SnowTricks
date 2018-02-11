@@ -1,13 +1,28 @@
 security:
+    encoders:
+        App\Entity\User: bcrypt
     # https://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    role_hierarchy:
+        ROLE_ADMIN: [ROLE_MANAGE_TRICKS]
+    access_control:
+            - { path: ^/admin, roles: ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH}
     providers:
-        in_memory: { memory: ~ }
+        our_users:
+            entity: { class: App\Entity\User, property: username}
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
             anonymous: ~
+            guard:
+                authenticators:
+                    - App\Security\LoginFormAuthenticator
+
+            logout:
+                path: /logout
+
+            switch_user: ~
 
             # activate different ways to authenticate
 
@@ -16,3 +31,4 @@ security:
 
             # form_login: ~
             # https://symfony.com/doc/current/cookbook/security/form_login_setup.html
+

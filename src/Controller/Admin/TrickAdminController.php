@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 
 use App\Entity\Image;
+use App\Entity\User;
 use App\Entity\Tricks;
 use App\Form\ImageType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -16,11 +17,17 @@ use App\Service\FileUploader;
 /**
  * Class TrickAdminController
  * @package App\Controller\Admin
+ * @Security("is_granted('ROLE_ADMIN')")
  * @Route("/admin")
  *
  */
 class TrickAdminController extends Controller
 {
+    public function indexAction()
+    {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+    }
+
     /**
      * @param Request $request
      * @Route("/trick/new", name="admin_trick_new")
@@ -49,6 +56,9 @@ class TrickAdminController extends Controller
 
            $em->persist($trick);
            $em->flush();
+
+           $this->addFlash('success',
+               sprintf('Merci %s, vous venez de créer une figure', $this->getUser()->getUsername()));
 
            return $this->redirect($this->generateUrl('app_image_list'));
        }

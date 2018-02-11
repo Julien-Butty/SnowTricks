@@ -3,11 +3,12 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id
@@ -27,19 +28,50 @@ class User
     private $email;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
+     *
      */
     private $avatar;
 
     /**
-     * @ORM\Column(type="string")
+     * @var
+     * @ORM\Column(type="string", nullable=true)
      */
     private $password;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", unique=true)
      */
     private $plainPassword;
+
+    /**
+     * @var array
+     * @ORM\Column(type="text")
+     */
+    private $roles = [];
+
+    /**
+     * @return string
+     */
+    public function getPlainPassword(): string
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * @param string $plainPassword
+     */
+    public function setPlainPassword(string $plainPassword): void
+    {
+        $this->plainPassword = $plainPassword;
+
+        $this->password = null;
+    }
+
+    public function getPassword()
+    {
+        return $this->password;
+    }
 
     /**
      * @return mixed
@@ -63,6 +95,14 @@ class User
     public function getUsername()
     {
         return $this->username;
+    }
+
+    /**
+     * @param mixed $password
+     */
+    public function setPassword($password): void
+    {
+        $this->password = $password;
     }
 
     /**
@@ -105,58 +145,30 @@ class User
         $this->avatar = $avatar;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getPassword()
+
+    public function getRoles()
     {
-        return $this->password;
+        $roles = $this->roles;
+
+        if (!in_array('ROLE_USER', $roles)) {
+            $roles[] = 'ROLE_USER';
+        }
+
+        return $roles;
     }
 
-    /**
-     * @param mixed $password
-     */
-    public function setPassword($password): void
+    public function setRoles(array $roles)
     {
-        $this->password = $password;
+        $this->roles = $roles;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getPlainPassword()
+    public function getSalt()
     {
-        return $this->plainPassword;
+        // TODO: Implement getSalt() method.
     }
 
-    /**
-     * @param mixed $plainPassword
-     */
-    public function setPlainPassword($plainPassword): void
+    public function eraseCredentials()
     {
-        $this->plainPassword = $plainPassword;
+        $this->plainPassword = null;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getRole()
-    {
-        return $this->role;
-    }
-
-    /**
-     * @param mixed $role
-     */
-    public function setRole($role): void
-    {
-        $this->role = $role;
-    }
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $role;
-
-
 }
