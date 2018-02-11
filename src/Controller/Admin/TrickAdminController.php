@@ -33,7 +33,7 @@ class TrickAdminController extends Controller
      */
     public function newAction(Request $request)
     {
-//        $image = new Image();
+
 
 
        $form = $this->createForm(TricksFormType::class);
@@ -45,10 +45,12 @@ class TrickAdminController extends Controller
            $tricks = $form->getData();
            $em = $this->getDoctrine()->getManager();
 
-//            $images = $tricks->getImages();
-//            foreach($images in $image){}
-//           $file = $image->getUrl();
-//           $fileName = $fileUploader->upload($file);
+            $images = $tricks->getImages();
+            foreach($images as $image){
+
+           $file = $image->getUrl();
+           $fileName = $fileUploader->upload($file);
+           }
 
 
 //           $image->setUrl($fileName);

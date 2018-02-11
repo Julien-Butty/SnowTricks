@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -29,24 +30,12 @@ class MainController extends Controller
     }
 
     /**
-     * @param $trickName
+     * @param Tricks $trick
      * @return Response
-     * @Route("/trick/{trickName}", name="trick_show")
+     * @Route("/trick/{title}", name="trick_show")
      */
-    public function showAction($trickName)
+    public function showAction(Tricks $trick)
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $trick = $em->getRepository('App:Tricks')
-            ->findOneBy(['title' => $trickName]);
-
-
-
-
-
-        if (!$trickName) {
-            throw $this->createNotFoundException('Cette figure n\'existe pas !!!');
-        }
 
         return $this->render('Tricks/show.html.twig', array(
             'trick'=> $trick,
