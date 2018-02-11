@@ -1,5 +1,7 @@
-{{ form_start(Trick) }}
+{{ form_start(trickForm) }}
+{{ form_row(trickForm.title) }}
+{{ form_row(trickForm.trick_group) }}
+{{ form_row(trickForm.content) }}
 
-{{ form_row(Trick.url) }}
-
-{{ form_end(Trick) }}
+<button type="submit" class="btn btn-primary" formnovalidate>Save</button>
+{{ form_end(trickForm) }}

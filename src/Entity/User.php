@@ -1,10 +1,7 @@
 <?php
-
 namespace App\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
-
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
@@ -16,40 +13,33 @@ class User implements UserInterface
      * @ORM\Column(type="integer")
      */
     private $id;
-
     /**
      * @ORM\Column(type="string")
      */
     private $username;
-
     /**
      * @ORM\Column(type="string")
      */
     private $email;
-
     /**
      * @ORM\Column(type="string", nullable=true)
      *
      */
     private $avatar;
-
     /**
      * @var
      * @ORM\Column(type="string", nullable=true)
      */
     private $password;
-
     /**
      * @ORM\Column(type="string", unique=true)
      */
     private $plainPassword;
-
     /**
      * @var array
      * @ORM\Column(type="text")
      */
     private $roles = [];
-
     /**
      * @return string
      */
@@ -57,22 +47,18 @@ class User implements UserInterface
     {
         return $this->plainPassword;
     }
-
     /**
      * @param string $plainPassword
      */
     public function setPlainPassword(string $plainPassword): void
     {
         $this->plainPassword = $plainPassword;
-
         $this->password = null;
     }
-
     public function getPassword()
     {
         return $this->password;
     }
-
     /**
      * @return mixed
      */
@@ -80,7 +66,6 @@ class User implements UserInterface
     {
         return $this->id;
     }
-
     /**
      * @param mixed $id
      */
@@ -88,7 +73,6 @@ class User implements UserInterface
     {
         $this->id = $id;
     }
-
     /**
      * @return mixed
      */
@@ -96,7 +80,6 @@ class User implements UserInterface
     {
         return $this->username;
     }
-
     /**
      * @param mixed $password
      */
@@ -104,7 +87,6 @@ class User implements UserInterface
     {
         $this->password = $password;
     }
-
     /**
      * @param mixed $username
      */
@@ -112,7 +94,6 @@ class User implements UserInterface
     {
         $this->username = $username;
     }
-
     /**
      * @return mixed
      */
@@ -120,7 +101,6 @@ class User implements UserInterface
     {
         return $this->email;
     }
-
     /**
      * @param mixed $email
      */
@@ -128,7 +108,6 @@ class User implements UserInterface
     {
         $this->email = $email;
     }
-
     /**
      * @return mixed
      */
@@ -136,7 +115,6 @@ class User implements UserInterface
     {
         return $this->avatar;
     }
-
     /**
      * @param mixed $avatar
      */
@@ -144,29 +122,22 @@ class User implements UserInterface
     {
         $this->avatar = $avatar;
     }
-
-
     public function getRoles()
     {
         $roles = $this->roles;
-
         if (!in_array('ROLE_USER', $roles)) {
             $roles[] = 'ROLE_USER';
         }
-
         return $roles;
     }
-
     public function setRoles(array $roles)
     {
         $this->roles = $roles;
     }
-
     public function getSalt()
     {
         // TODO: Implement getSalt() method.
     }
-
     public function eraseCredentials()
     {
         $this->plainPassword = null;

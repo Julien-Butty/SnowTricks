@@ -53,4 +53,9 @@ class TrickGroup
      */
     private $name;
 
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
 }

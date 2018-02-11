@@ -2,7 +2,6 @@
 
 namespace App\Controller\Admin;
 
-
 use App\Entity\Image;
 use App\Entity\User;
 use App\Entity\Tricks;
@@ -37,33 +36,29 @@ class TrickAdminController extends Controller
     {
         $image = new Image();
         $trick = new Trick();
-       $form = $this->createForm(TrickType::class, $image);
+        $form = $this->createForm(TrickType::class, $image);
 
-       $form->handleRequest($request);
+        $form->handleRequest($request);
 
-       if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
 
-           $trick = $form->getData();
-           $em = $this->getDoctrine()->getManager();
+            $trick = $form->getData();
+            $em = $this->getDoctrine()->getManager();
 
             $images = $trick->getImages();
 //            foreach($images in $image){}
-           $file = $image->getUrl();
-           $fileName = $fileUploader->upload($file);
+            $file = $image->getUrl();
+            $fileName = $fileUploader->upload($file);
 
+            $image->setUrl($fileName);
 
-           $image->setUrl($fileName);
+            $em->persist($trick);
+            $em->flush();
 
-           $em->persist($trick);
-           $em->flush();
-
-           $this->addFlash('success',
-               sprintf('Merci %s, vous venez de créer une figure', $this->getUser()->getUsername()));
-
-           return $this->redirect($this->generateUrl('app_image_list'));
-       }
-
-
+            $this->addFlash('success',
+                sprintf('Merci %s, vous venez de créer une figure', $this->getUser()->getUsername()));
+            return $this->redirect($this->generateUrl('app_image_list'));
+        }
         return $this->render('admin/new.html.twig', array(
             'trickForm' => $form->createView(),
         ));

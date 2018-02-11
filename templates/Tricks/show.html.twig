@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Trick : {{ trick.title }}{% endblock %}
+
+{% block body %}
+    <div class="container overlay border border-dark">
+
+        <!--  Image à la une -->
+        <div class="thumbnail text-center">
+            <img src="{{ asset('vendor/image/snowboarder.jpg') }}" class="img-fluid mb-5 imgBack"
+                 alt="Responsive image">
+            <div class="caption">
+                <h1 class="font-italic text-dark textShad">{{ trick.title }}</h1>
+            </div>
+        </div>
+
+
+        <!-- Boucle images et video -->
+        <div class="d-flex justify-content-around">
+            <div class="card mb-3 " style="width: 12rem;">
+                <img class="card-img-top " src="{{ asset('vendor/image/snowboarder.jpg') }}" alt="Card image cap">
+            </div>
+        </div>
+
+        <!-- Contenu -->
+        <div class="container">
+            <p class="justify-content">
+                {{ trick.content }}
+            </p>
+
+            <span class="badge badge-primary">{{ trick.trickGroup.name }}</span>
+        </div>
+    </div>
+
+    <!-- Chat  -->
+{% endblock %}
+

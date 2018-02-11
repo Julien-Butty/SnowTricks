@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="flex-column">
+                <h1>Ajouter un trick</h1>
+                {{ include('Admin/Trick/_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
