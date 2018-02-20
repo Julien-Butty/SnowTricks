@@ -2,26 +2,19 @@
 
 namespace App\Form;
 
-use App\Entity\LoginForm;
+use App\Entity\ForgottenPassword;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class LoginFormType extends AbstractType
+class ForgottenPasswordType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('_username')
-            ->add('_password', PasswordType::class)
+            ->add('email', EmailType::class)
         ;
     }
-
-    public function getBlockPrefix()
-    {
-        return '';
-    }
-
 
 }

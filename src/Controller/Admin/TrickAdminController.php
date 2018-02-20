@@ -16,15 +16,16 @@ use App\Service\FileUploader;
 /**
  * Class TrickAdminController
  * @package App\Controller\Admin
- * @Security("is_granted('ROLE_ADMIN')")
+ * @Security("is_granted('ROLE_MANAGE_TRICKS')")
  * @Route("/admin")
  *
  */
 class TrickAdminController extends Controller
 {
+
     public function indexAction()
     {
-        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
     }
 
     /**
@@ -62,5 +63,28 @@ class TrickAdminController extends Controller
         return $this->render('admin/new.html.twig', array(
             'trickForm' => $form->createView(),
         ));
+    }
+
+    /**
+     * @Route("/trick/{title}/edit", name="admin_trick_edit")
+     * @param Request $request
+     * @param Tricks $tricks
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function editAction(Request $request, Tricks $tricks)
+    {
+        $form = $this->createForm(TricksFormType::class, $tricks);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $tricks = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($tricks);
+            $em->flush();
+            $this->addFlash('success', 'Yeahhh !!! Le Trick est mis à jour');
+            return $this->redirectToRoute('homepage');
+        }
+        return $this->render('Admin/Trick/edit.html.twig',[
+            'trickForm' => $form->createView()
+        ]);
     }
 }

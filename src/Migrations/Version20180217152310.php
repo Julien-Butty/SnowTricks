@@ -8,15 +8,14 @@ use Doctrine\DBAL\Schema\Schema;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-class Version20180211145352 extends AbstractMigration
+class Version20180217152310 extends AbstractMigration
 {
     public function up(Schema $schema)
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE user ADD roles LONGTEXT NOT NULL');
-        $this->addSql('CREATE UNIQUE INDEX UNIQ_8D93D6495D60225 ON user (plain_password)');
+        $this->addSql('ALTER TABLE user ADD reset_token VARCHAR(255) DEFAULT NULL, CHANGE avatar avatar VARCHAR(255) NOT NULL');
     }
 
     public function down(Schema $schema)
@@ -24,7 +23,6 @@ class Version20180211145352 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('DROP INDEX UNIQ_8D93D6495D60225 ON user');
-        $this->addSql('ALTER TABLE user DROP roles');
+        $this->addSql('ALTER TABLE user DROP reset_token, CHANGE avatar avatar VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci');
     }
 }

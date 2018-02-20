@@ -1,9 +1,14 @@
 <?php
 namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(fields={"email"}, message="Cette adresse email est déjà utilisée!")
  */
 class User implements UserInterface
 {
@@ -17,40 +22,73 @@ class User implements UserInterface
      * @ORM\Column(type="string")
      */
     private $username;
+
     /**
+     * @Assert\NotBlank()
+     * @Assert\Email()
      * @ORM\Column(type="string")
      */
     private $email;
+
+
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="string")
      *
      */
     private $avatar;
     /**
      * @var
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="string", nullable=false)
      */
     private $password;
+
     /**
-     * @ORM\Column(type="string", unique=true)
+     * @var string
+     * @Assert\NotBlank(groups={"Registration"})
      */
     private $plainPassword;
+
+
     /**
      * @var array
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="json")
      */
     private $roles = [];
+
+    /**
+     * @var
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $resetToken;
+
+    /**
+     * @return mixed
+     */
+    public function getResetToken()
+    {
+        return $this->resetToken;
+    }
+
+    /**
+     * @param mixed $resetToken
+     */
+    public function setResetToken($resetToken): void
+    {
+        $this->resetToken = $resetToken;
+    }
+
+
     /**
      * @return string
      */
-    public function getPlainPassword(): string
+    public function getPlainPassword()
     {
         return $this->plainPassword;
     }
     /**
      * @param string $plainPassword
      */
-    public function setPlainPassword(string $plainPassword): void
+    public function setPlainPassword($plainPassword)
     {
         $this->plainPassword = $plainPassword;
         $this->password = null;
@@ -141,5 +179,6 @@ class User implements UserInterface
     public function eraseCredentials()
     {
         $this->plainPassword = null;
+        $this->resetToken = null;
     }
 }

@@ -19,11 +19,12 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
         <div class="navbar-nav ">
+
             <a class="nav-item nav-link active barre " href="{{ path('homepage') }}">Home <span class="sr-only">(current)</span></a>
 
             <a class="nav-item nav-link barre " href="#">Tricks</a>
             {% if is_granted('ROLE_USER') %}
-            <a class="nav-item nav-link " href="{{ path('security_logout')}}">Log Out</a>
+            <a class="nav-item nav-link active " href="{{ path('security_logout')}}">"{{ app.user.username }}" Log Out</a>
             {% else %}
             <a class="nav-item nav-link barre " href="{{ path('security_login')}}">Sign in</a>
             <a class="nav-item nav-link " href="#">Sign up</a>
@@ -36,23 +37,14 @@
 
 
 
-    {% for msg in app.session.flashBag.get('success') %}
-        <div class="alert alert-success">
-            {{ msg }}
-        </div>
-    {% endfor %}
-
-
-
-
-
-
-<div class="thumbnail text-center">
-    <img src="{{ asset('vendor/image/snowboarder.jpg') }}" class="img-fluid mb-5 imgBack" alt="Responsive image">
-    <div class="caption">
-        <h1 class="font-italic text-dark textShad">Born to board...</h1>
+{% for label, messages in app.flashes %}
+{% for message in messages %}
+    <div class="alert alert-{{ label }}">
+        {{ message }}
     </div>
-</div>
+{% endfor %}
+{% endfor %}
+
 
 
 <!-- Block body -->

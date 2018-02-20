@@ -17,6 +17,8 @@
                     {{ form_row(form._password) }}
                 <button type="submit" class="btn btn-success">Connexion <span class="fa fa-lock"></span></button>
                 {{ form_end(form) }}
+                <a href="{{ path('user_register') }}">S'enregistrer</a>
+                <a href="{{ path('forgotten_password') }}">Mot de passe oublié</a>
             </div>
         </div>
     </div>

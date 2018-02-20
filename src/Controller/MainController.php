@@ -19,13 +19,12 @@ class MainController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-       $tricks = $em->getRepository('App:Tricks')
+        $tricks = $em->getRepository('App:Tricks')
            ->findAllById();
 
-
-
         return $this->render('Tricks/trickslist.html.twig',[
-            'tricks' => $tricks
+            'tricks' => $tricks,
+
         ]);
     }
 
@@ -39,6 +38,7 @@ class MainController extends Controller
 
         return $this->render('Tricks/show.html.twig', array(
             'trick'=> $trick,
+
 
         ));
 
