@@ -20,6 +20,7 @@ class LoadTricks extends Fixture
         $mute->setTitle('Mute');
         $mute->setContent('Il faut d\'abord faire un saut, un simple ollie par exemple. Bien plier les jambes une fois en l’air pour se regrouper, et aller chercher la planche avec la main. Attention il ne faut pas que le buste se casse en deux pour aller chercher la board : ce sont bien les genoux qui remontent pour amener la board vers la main. Pour effectuer un Mute : la main avant grabbe la carre frontside entre les pieds');
         $manager->persist($mute);
+        $this->addReference('Mute', $mute);
 
         $melon = new Tricks();
         $melon->setTrickGroup($this->getReference('group_grab'));

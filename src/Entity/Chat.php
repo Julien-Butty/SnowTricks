@@ -27,12 +27,12 @@ class Chat
     private $date;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Tricks")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Tricks", inversedBy="chat")
      */
     private $tricks;
 
     /**
-     *@ORM\ManyToMany(targetEntity="App\Entity\User")
+     *@ORM\ManyToMany(targetEntity="App\Entity\User", inversedBy="chat")
      */
     private $user;
 

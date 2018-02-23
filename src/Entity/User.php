@@ -62,6 +62,28 @@ class User implements UserInterface
     private $resetToken;
 
     /**
+     * @var
+     * @ORM\ManyToMany(targetEntity="App\Entity\Chat", mappedBy="user")
+     */
+    private $chat;
+
+    /**
+     * @return mixed
+     */
+    public function getChat()
+    {
+        return $this->chat;
+    }
+
+    /**
+     * @param mixed $chat
+     */
+    public function setChat($chat): void
+    {
+        $this->chat = $chat;
+    }
+
+    /**
      * @return mixed
      */
     public function getResetToken()

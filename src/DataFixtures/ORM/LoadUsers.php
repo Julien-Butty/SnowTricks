@@ -31,6 +31,7 @@ class LoadUsers extends Fixture {
         $user1->setPassword($password);
         $user1->setRoles(['ROLE_ADMIN']);
         $manager->persist($user1);
+        $this->addReference('user1', $user1);
 
 
         $user2 = new User();
