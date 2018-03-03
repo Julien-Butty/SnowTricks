@@ -30,8 +30,42 @@
 
             <span class="badge badge-primary">{{ trick.trickGroup.name }}</span>
         </div>
+
+
+        <div class="container mt-5 mb-5">
+            {% if is_granted('ROLE_MANAGE_TRICKS') %}
+                {{ form_start(chatForm) }}
+                {{ form_row(chatForm.message) }}
+                <button type="submit" class="btn btn-primary" formnovalidate>Envoyer</button>
+                {{ form_end(chatForm) }}
+            {% endif %}
+
+            {% for chat in trick.chats %}
+                <div class="media bg-light">
+                    <img class="mr-3"
+                         src="{{ asset('img/avatar/defAvatar.png') }}"
+                         alt="Generic placeholder image">
+                    <div class="media-body">
+                        <div class="d-flex flex-row">
+
+                            <p class="ml-1 font-weight-bold">{{ chat.user.username }}</p>
+
+
+                            <p class="ml-1 font-weight-light">{{ chat.date|date('d-m-Y g:i') }}</p>
+                        </div>
+                        <p class=" mb-0">{{ chat.message }}</p>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+
+
     </div>
 
-    <!-- Chat  -->
+
+
+
+
 {% endblock %}
 

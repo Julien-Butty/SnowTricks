@@ -1,5 +1,6 @@
 <?php
 namespace App\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -32,7 +33,7 @@ class User implements UserInterface
 
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      *
      */
     private $avatar;
@@ -63,24 +64,34 @@ class User implements UserInterface
 
     /**
      * @var
-     * @ORM\ManyToMany(targetEntity="App\Entity\Chat", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="App\Entity\Chat", mappedBy="user")
      */
-    private $chat;
+    private $chats;
+
+    public function __construct()
+    {
+        $this->chats = new ArrayCollection();
+    }
 
     /**
      * @return mixed
      */
-    public function getChat()
+    public function getChats()
     {
-        return $this->chat;
+        return $this->chats;
     }
 
-    /**
-     * @param mixed $chat
-     */
-    public function setChat($chat): void
+
+    public function addChat(Chat $chat)
     {
-        $this->chat = $chat;
+        $this->chats[] = $chat;
+
+        return $this;
+    }
+
+    public function removeChat(Chat $chat)
+    {
+        $this->chats->removeElement($chat);
     }
 
     /**

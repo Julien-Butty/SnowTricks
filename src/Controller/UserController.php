@@ -107,7 +107,7 @@ class UserController extends Controller
     }
 
     /**
-     * @Route("reset_password/{resetToken}", name="reset_password")
+     * @Route("/reset_password/{resetToken}", name="reset_password")
      * @param Request $request
      * @param User $user
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response

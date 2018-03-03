@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TricksRepository")
  */
-class Tricks
+class Trick
 {
     /**
      * @ORM\Id
@@ -40,24 +40,29 @@ class Tricks
 
     /**
      * @var
-     * @ORM\ManyToMany(targetEntity="App\Entity\Chat", mappedBy="tricks")
+     * @ORM\OneToMany(targetEntity="App\Entity\Chat", mappedBy="trick")
      */
-    private $chat;
+    private $chats;
+
+    public function __construct()
+    {
+        $this->chats = new ArrayCollection();
+    }
 
     /**
      * @return mixed
      */
-    public function getChat()
+    public function getChats()
     {
-        return $this->chat;
+        return $this->chats;
     }
 
     /**
-     * @param mixed $chat
+     * @param mixed $chats
      */
-    public function setChat($chat): void
+    public function setChats($chats): void
     {
-        $this->chat = $chat;
+        $this->chats = $chats;
     }
 
 

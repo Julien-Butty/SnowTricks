@@ -70,8 +70,8 @@ class Video
     }
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Tricks")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Trick")
      */
-    private $tricksVideo;
+    private $trickVideo;
 
 }

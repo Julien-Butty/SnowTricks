@@ -4,11 +4,13 @@ namespace App\Controller\Admin;
 
 use App\Entity\Image;
 use App\Entity\User;
-use App\Entity\Tricks;
+use App\Entity\Trick;
 use App\Form\ImageType;
+use App\Form\TricksFormType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use App\Service\FileUploader;
 
@@ -35,9 +37,9 @@ class TrickAdminController extends Controller
      */
     public function newAction(Request $request, FileUploader $fileUploader)
     {
-        $image = new Image();
-        $trick = new Trick();
-        $form = $this->createForm(TrickType::class, $image);
+
+
+        $form = $this->createForm(TricksFormType::class);
 
         $form->handleRequest($request);
 
@@ -46,12 +48,23 @@ class TrickAdminController extends Controller
             $trick = $form->getData();
             $em = $this->getDoctrine()->getManager();
 
-            $images = $trick->getImages();
+
 //            foreach($images in $image){}
-            $file = $image->getUrl();
+            /** @var UploadedFile $file */
+            /** @var Trick $trick */
+            $file = $trick->getImages();
+
             $fileName = $fileUploader->upload($file);
 
-            $image->setUrl($fileName);
+            $file->move(
+                $this->getParameter('images_directory'),
+                $fileName
+            );
+
+            $trick->setImages($fileName);
+
+
+
 
             $em->persist($trick);
             $em->flush();
@@ -60,7 +73,7 @@ class TrickAdminController extends Controller
                 sprintf('Merci %s, vous venez de créer une figure', $this->getUser()->getUsername()));
             return $this->redirect($this->generateUrl('app_image_list'));
         }
-        return $this->render('admin/new.html.twig', array(
+        return $this->render('Admin/Trick/new.html.twig', array(
             'trickForm' => $form->createView(),
         ));
     }
@@ -68,10 +81,10 @@ class TrickAdminController extends Controller
     /**
      * @Route("/trick/{title}/edit", name="admin_trick_edit")
      * @param Request $request
-     * @param Tricks $tricks
+     * @param Trick $tricks
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function editAction(Request $request, Tricks $tricks)
+    public function editAction(Request $request, Trick $tricks)
     {
         $form = $this->createForm(TricksFormType::class, $tricks);
         $form->handleRequest($request);

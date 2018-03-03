@@ -3,38 +3,40 @@
 namespace App\DataFixtures\ORM;
 
 
-use App\Entity\Tricks;
+use App\Entity\Trick;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
 
-class LoadTricks extends Fixture
+class LoadTricks extends Fixture implements DependentFixtureInterface
 {
 
     public function load(ObjectManager $manager)
     {
-        $mute = new Tricks();
+        $mute = new Trick();
         $mute->setTrickGroup($this->getReference('group_grab'));
         $mute->setTitle('Mute');
         $mute->setContent('Il faut d\'abord faire un saut, un simple ollie par exemple. Bien plier les jambes une fois en l’air pour se regrouper, et aller chercher la planche avec la main. Attention il ne faut pas que le buste se casse en deux pour aller chercher la board : ce sont bien les genoux qui remontent pour amener la board vers la main. Pour effectuer un Mute : la main avant grabbe la carre frontside entre les pieds');
         $manager->persist($mute);
         $this->addReference('Mute', $mute);
 
-        $melon = new Tricks();
+        $melon = new Trick();
         $melon->setTrickGroup($this->getReference('group_grab'));
         $melon->setTitle('Melon');
         $melon->setContent('Il faut d\'abord faire un saut, un simple ollie par exemple. Bien plier les jambes une fois en l’air pour se regrouper, et aller chercher la planche avec la main. Attention il ne faut pas que le buste se casse en deux pour aller chercher la board : ce sont bien les genoux qui remontent pour amener la board vers la main. Pour effectuer un Melon : la main avant grabbe la carre bakside entre les talons. En désaxant le corps et la board cela peut faire un Method ou un Backside Air.');
         $manager->persist($melon);
 
-        $indy = new Tricks();
+
+        $indy = new Trick();
         $indy->setTrickGroup($this->getReference('group_grab'));
         $indy->setTitle('Indy');
         $indy->setContent('Il faut d\'abord faire un saut, un simple ollie par exemple. Bien plier les jambes une fois en l’air pour se regrouper, et aller chercher la planche avec la main. Attention il ne faut pas que le buste se casse en deux pour aller chercher la board : ce sont bien les genoux qui remontent pour amener la board vers la main. Pour effectuer un Indy : la main arrière vient graber la carre frontside entre les pieds. Sur un saut droit c’est un Indy Grab, sur un hip ou un quarter en front c’est un frontside indy ou frontside grab alors que sur un saut en back (3.6 back par exemple) ça sera un backside Indy..');
         $manager->persist($indy);
 
-        $f720 = new Tricks();
+        $f720 = new Trick();
         $f720->setTrickGroup($this->getReference('group_rotation'));
         $f720->setTitle('Frontside 720');
         $f720->setContent('
@@ -58,7 +60,7 @@ Au boulot !');
         $manager->persist($f720);
 
 
-        $b180 = new Tricks();
+        $b180 = new Trick();
         $b180->setTrickGroup($this->getReference('group_rotation'));
         $b180->setTitle('Backside 180');
         $b180->setContent('Le Backside 180 peut s’expliquer en plusieurs phases :
@@ -74,7 +76,7 @@ Avant d’essayer un 180 back, le mieux est d\'essayer de bien rider en switch p
         $manager->persist($b180);
 
 
-        $valeflip = new Tricks();
+        $valeflip = new Trick();
         $valeflip->setTrickGroup($this->getReference('group_flip'));
         $valeflip->setTitle('Valeflip');
         $valeflip->setContent('Pour expliquer un peu ce trick, il faudrait déjà lui donner un nom ! C’est un mélange entre un fs 5 underflip et un rodéo 5. 
@@ -86,7 +88,7 @@ Le plus simple pour apprendre reste de se lancer, donc je vous conseille d’ess
         $manager->persist($valeflip);
 
 
-        $tailslide = new Tricks();
+        $tailslide = new Trick();
         $tailslide->setTrickGroup($this->getReference('group_slide'));
         $tailslide->setTitle('Cab 2.7 in Bs Tailslide 2.7 out');
         $tailslide->setContent('Arriver en fakie tout en regardant bien le kicker, puis à l’approche du module, popper et effectuer un trois quarts de tour (photo 1).
@@ -96,7 +98,7 @@ Si tout marche bien, surtout ne regardez pas derrière vous, mais dirigez vos ye
         $manager->persist($tailslide);
 
 
-        $ollie = new Tricks();
+        $ollie = new Trick();
         $ollie->setTrickGroup($this->getReference('group_ollie'));
         $ollie->setTitle('Ollie');
         $ollie->setContent('Le Ollie peut se décomposer en plusieurs phases :
@@ -115,5 +117,18 @@ Le mieux c’est de commencer à s’entrainer à faire des ollies à plat sur l
         $manager->flush();
 
 
+    }
+
+    /**
+     * This method must return an array of fixtures classes
+     * on which the implementing class depends on
+     *
+     * @return array
+     */
+    function getDependencies()
+    {
+        return array(
+            LoadGroups::class
+        );
     }
 }

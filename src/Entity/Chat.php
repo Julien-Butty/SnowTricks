@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -22,19 +23,58 @@ class Chat
     private $message;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="datetime")
      */
     private $date;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Tricks", inversedBy="chat")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Trick", cascade={"persist"}, inversedBy="chats")
+     * @ORM\JoinColumn(name="trick_id", referencedColumnName="id", nullable=false)
      */
-    private $tricks;
+    private $trick;
 
     /**
-     *@ORM\ManyToMany(targetEntity="App\Entity\User", inversedBy="chat")
+     *@ORM\ManyToOne(targetEntity="App\Entity\User", cascade={"persist"}, inversedBy="chats")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
      */
     private $user;
+
+    public function __construct()
+    {
+
+        $this->date = new \DateTime();
+    }
+
+    /**
+     * @param User $user
+     */
+    public function addUser(User $user)
+    {
+        $this->users[] = $user;
+        return $this;
+    }
+
+    public function removeUser(User $user)
+    {
+        $this->users->removeElement($user);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser(User $user): void
+    {
+        $this->user = $user;
+    }
+
 
     /**
      * @return mixed
@@ -66,7 +106,21 @@ class Chat
     public function setMessage($message): void
     {
         $this->message = $message;
+
+
     }
+
+
+
+    /**
+     * @param mixed $date
+     */
+    public function setDate($date): void
+    {
+        $this->date = $date;
+    }
+
+
 
     /**
      * @return mixed
@@ -77,45 +131,42 @@ class Chat
     }
 
     /**
-     * @param mixed $date
+     * @param mixed $trick
      */
-    public function setDate($date): void
+    public function setTrick(Trick $trick ): void
     {
-        $this->date = $date;
+        $this->trick = $trick;
     }
 
     /**
      * @return mixed
      */
-    public function getTricks()
+    public function getTrick()
     {
-        return $this->tricks;
+        return $this->trick;
     }
 
     /**
-     * @param mixed $tricks
+     * @param Trick $trick
      */
-    public function setTricks($tricks): void
+    public function addTrick(Trick $trick)
     {
-        $this->tricks = $tricks;
+        $this->trick[] = $trick;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getUser()
+    public function removeTrick(Trick $trick)
     {
-        return $this->user;
+        $this->tricks->removeElement($trick);
     }
 
-    /**
-     * @param mixed $user
-     */
-    public function setUser($user): void
+    public function __toString()
     {
-        $this->user = $user;
-    }
+       return $this->getDate();
+       return $this->getUser();
 
+
+
+    }
 
 
 }
