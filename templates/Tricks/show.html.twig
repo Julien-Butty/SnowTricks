@@ -7,25 +7,61 @@
 
         <!--  Image à la une -->
         <div class="thumbnail text-center">
-            <img src="{{ asset('vendor/image/snowboarder.jpg') }}" class="img-fluid mb-5 imgBack"
-                 alt="Responsive image">
+
+
+            {% if trick.images.first %}
+                <img src="{{ asset('uploads/images/'~trick.images.first.url) }}" alt="">
+            {% else %}
+                <img src="{{ asset('vendor/image/snowboarder.jpg') }}" class="img-fluid mb-5 imgBack"
+                     alt="Responsive image">
+            {% endif %}
             <div class="caption">
                 <h1 class="font-italic text-dark textShad">{{ trick.title }}</h1>
             </div>
         </div>
 
 
-        <!-- Boucle images et video -->
-        <div class="d-flex justify-content-around">
-            <div class="card mb-3 " style="width: 12rem;">
-                <img class="card-img-top " src="{{ asset('vendor/image/snowboarder.jpg') }}" alt="Card image cap">
+    <div class="container mt-5 mb-5">
+        <div class="text-center">
+    {{ include('Admin/Trick/delete_form.html.twig') }}
+    </div>
+    </div>
+
+        <!-- Boucle images -->
+        <div class="d-flex justify-content-around pt-5">
+            {% for image in trick.images %}
+
+            <div class="card mb-3 " style="width: 10rem;">
+                <img class="card-img-top  " src="{{ asset('uploads/images/'~image.url)|imagine_filter('squared_thumbnail') }}" alt="Card image cap">
             </div>
+
+            {% if loop.index is divisible by (4) and not loop.last %}
+        </div>
+        <div class="d-flex justify-content-around mt-2  ">
+            {% endif %}
+            {% endfor %}
+        </div>
+
+
+        <!-- Boucle video -->
+        <div class="d-flex justify-content-around pt-5">
+            {% for video in trick.videos %}
+
+            <div class="card mb-3" style="width: 12rem">
+                {{ video.video()|raw }}
+            </div>
+
+            {% if loop.index is divisible by (4) and not loop.last %}
+        </div>
+        <div class="d-flex justify-content-around mt-2  ">
+            {% endif %}
+            {% endfor %}
         </div>
 
         <!-- Contenu -->
         <div class="container">
             <p class="justify-content">
-                {{ trick.content }}
+                {{ trick.content | raw }}
             </p>
 
             <span class="badge badge-primary">{{ trick.trickGroup.name }}</span>
@@ -59,12 +95,7 @@
 
             {% endfor %}
         </div>
-
-
     </div>
-
-
-
 
 
 {% endblock %}

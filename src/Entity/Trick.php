@@ -4,18 +4,37 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TricksRepository")
  */
 class Trick
 {
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @return mixed
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param mixed $slug
+     */
+    public function setSlug($slug): void
+    {
+        $this->slug = $slug;
+    }
 
     /**
      * @ORM\Column(type="string")
@@ -33,10 +52,25 @@ class Trick
     private $user;
 
     /**
-     * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="trick")
+     * @var Image[]|ArrayCollection
+     *@ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="trick",cascade={"persist"}, orphanRemoval=true)
      */
     private $images;
+
+    /**
+     * @var
+     * @ORM\Column(type="string", unique=true)
+     * @Gedmo\Slug(fields={"title"})
+     */
+    private $slug;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="App\Entity\Video", mappedBy="trick", cascade={"persist"}, orphanRemoval=true)
+     */
+    private $videos;
+
+
 
     /**
      * @var
@@ -47,10 +81,40 @@ class Trick
     public function __construct()
     {
         $this->chats = new ArrayCollection();
+        $this->images = new ArrayCollection();
+        $this->videos = new ArrayCollection();
+
     }
 
     /**
-     * @return mixed
+     * @return ArrayCollection
+     */
+    public function getVideos()
+    {
+        return $this->videos;
+    }
+
+    /**
+     * @param mixed $videos
+     */
+    public function setVideos($videos): void
+    {
+        $this->videos = $videos;
+    }
+
+    public function addVideo(Video $video)
+    {
+        $this->videos[] = $video;
+        $video->setTrick($video);
+    }
+
+    public function removeVideo(Video $video)
+    {
+        $this->videos->removeElement($video);
+    }
+
+    /**
+     * @return ArrayCollection
      */
     public function getChats()
     {
@@ -67,7 +131,7 @@ class Trick
 
 
     /**
-     * @return mixed
+     * @return Image[]|ArrayCollection
      */
     public function getImages()
     {
@@ -75,20 +139,22 @@ class Trick
     }
 
     /**
-     * @param mixed $images
+     * @param ArrayCollection $images
      */
-    public function setImages($images): void
+    public function setImages($images)
     {
         $this->images = $images;
     }
 
     public function addImage(Image $image)
     {
-        $this->images->add($image);
+        $this->images[] = $image;
         $image->setTrick($this);
+
+        return $this;
     }
 
-    public function removeImage($image)
+    public function removeImage(Image $image)
     {
         $this->images->removeElement($image);
     }
@@ -177,8 +243,6 @@ class Trick
      * @ORM\ManyToOne(targetEntity="App\Entity\TrickGroup")
      */
     private $trickGroup;
-
-
 
 
 }

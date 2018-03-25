@@ -3,6 +3,8 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -37,6 +39,7 @@ class User implements UserInterface
      *
      */
     private $avatar;
+
     /**
      * @var
      * @ORM\Column(type="string", nullable=false)
@@ -71,6 +74,7 @@ class User implements UserInterface
     public function __construct()
     {
         $this->chats = new ArrayCollection();
+        $this->roles = ['ROLE_ADMIN'];
     }
 
     /**

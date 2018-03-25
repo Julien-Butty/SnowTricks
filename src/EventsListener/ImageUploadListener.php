@@ -3,10 +3,11 @@
 
 namespace App\EventsListener;
 
+use App\Entity\Trick;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
-use App\Entity\Image;
 use App\Service\FileUploader;
 
 class ImageUploadListener
@@ -29,35 +30,53 @@ class ImageUploadListener
     {
         $entity = $args->getEntity();
 
+
+        dump('preupdate');
+
         $this->uploadFile($entity);
     }
 
     private function uploadFile($entity)
     {
-// upload only works for Product entities
-        if (!$entity instanceof Image) {
+//        dump('upload');
+//        if (!$entity instanceof Trick) {
+//            return;
+//        }
+//        foreach ($entity->getImages() as $image) {
+//            dump('check image');
+//
+//            if ($image->getFile() instanceof UploadedFile) {
+//                dump('new upload');
+//                $fileName = $this->uploader->upload($image->getFile());
+//                $image->setUrl($fileName);
+//            }
+//        }
+        if (!$entity instanceof Trick ) {
             return;
         }
 
-        $file = $entity->getUrl();
+        $file = $entity->getImages();
 
-// only upload new files
         if ($file instanceof UploadedFile) {
             $fileName = $this->uploader->upload($file);
-            $entity->setUrl($fileName);
+            $entity->setImages($fileName);
         }
+
+
     }
 
     public function postLoad(LifecycleEventArgs $args)
     {
         $entity = $args->getEntity();
 
-        if (!$entity instanceof Image) {
+        if (!$entity instanceof Trick) {
             return;
         }
 
-        if ($fileName = $entity->getUrl()) {
-            $entity->setUrl(new File($this->uploader->getTargetDir().'/'.$fileName));
+        foreach ($entity->getImages() as $image) {
+
+            $image->setFile(new File($this->uploader->getTargetDirectory() . '/' . $image->getUrl()));
+
         }
     }
 }

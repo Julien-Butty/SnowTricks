@@ -2,7 +2,11 @@
 {{ form_row(trickForm.title) }}
 {{ form_row(trickForm.trick_group) }}
 {{ form_row(trickForm.content) }}
-{{ form_row((trickForm.images)) }}
+
+{{ form_row(trickForm.images) }}
+{{ form_row(trickForm.videos) }}
+
+
 
 <button type="submit" class="btn btn-primary" formnovalidate>Save</button>
 {{ form_end(trickForm) }}

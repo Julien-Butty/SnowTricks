@@ -3,6 +3,7 @@
 parameters:
     locale: 'fr'
     images_directory: '%kernel.project_dir%/public/uploads/images'
+    avatars_directory: '%kernel.project_dir%/public/uploads/avatars'
 
 
 services:
@@ -31,13 +32,13 @@ services:
 
     App\Service\FileUploader:
         arguments:
-            $targetDir: '%images_directory%'
+            $targetDirectory: '%images_directory%'
 
     App\EventsListener\ImageUploadListener:
         tags:
-            - { name: doctrine.event_listener, event: prePersist }
-            - { name: doctrine.event_listener, event: preUpdate }
-            - { name: doctrine.event_listener, event: postLoad }
+#            - { name: doctrine.event_listener, event: prePersist }
+#            - { name: doctrine.event_listener, event: preUpdate }
+#            - { name: doctrine.event_listener, event: postLoad }
 
     App\Doctrine\HashPasswordListener:
         tags:

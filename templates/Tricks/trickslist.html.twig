@@ -2,38 +2,36 @@
 
 {% block body %}
     <div class="thumbnail text-center">
-        <img src="{{ asset('vendor/image/snowboarder.jpg') }}" class="img-fluid mb-5 imgBack" alt="Responsive image">
+        <img src="{{ asset('img/trick/snowboarder.jpg') }}" class="img-fluid mb-5 imgBack" alt="Responsive image">
         <div class="caption">
             <h1 class="font-italic text-dark textShad">Born to board...</h1>
         </div>
     </div>
-            <div class="d-flex justify-content-around mt-2  ">
+
+    <div class="d-flex justify-content-around mt-2  ">
     {% for trick in tricks %}
 
 
         <div class="card mb-3 " style="width: 18rem;">
             {#{% for trick in tricks %}#}
             <img class="card-img-top "
-                 src="{{ asset('vendor/image/snowboarder.jpg') }}"
+                 src="{{ asset('img/trick/snowboarder.jpg') }}"
                  alt="Card image cap">
             <div class="card-body p-2">
-                <a href="{{ path('trick_show', {'title': trick.title}) }}" class="card-link ">{{ trick.title }}</a>
+                <a href="{{ path('trick_show', {'slug': trick.slug}) }}" class="card-link ">{{ trick.title }}</a>
                 {% if is_granted('ROLE_USER') %}
-                <a href="#" class="card-link float-right"><i class="fa fa-trash"></i></a>
-                <a href="{{ path('admin_trick_edit', {'title':trick.title}) }}" class="card-link float-right"><i class="fa fa-pencil"></i></a>
+                    <a href="#" class="card-link float-right"><i class="fa fa-trash"></i></a>
+                    <a href="{{ path('admin_trick_edit', {'slug':trick.slug}) }}" class="card-link float-right"><i
+                                class="fa fa-pencil"></i></a>
                 {% endif %}
             </div>
-
         </div>
 
 
         {% if loop.index is divisible by (4) and not loop.last %}
-        </div>
-                <div class="d-flex justify-content-around mt-2  ">
+            </div>
+            <div class="d-flex justify-content-around mt-2  ">
         {% endif %}
-
-
-
     {% endfor %}
     </div>
 

@@ -39,8 +39,10 @@ class MainController extends Controller
     /**
      * @param Trick $trick
      * @param Request $request
+     * @param AuthorizationCheckerInterface $checker
+     * @param EntityManagerInterface $em
      * @return Response
-     * @Route("/trick/{title}", name="trick_show")
+     * @Route("/trick/{slug}", name="trick_show")
      */
     public function showAction(Trick $trick, Request $request, AuthorizationCheckerInterface $checker, EntityManagerInterface $em)
     {

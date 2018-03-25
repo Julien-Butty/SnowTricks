@@ -3,7 +3,10 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraint as Assert;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ImageRepository")
@@ -23,9 +26,33 @@ class Image
     private $url;
 
     /**
+     * @var UploadedFile
+     */
+    private $file;
+
+    /**
+     * @return ?File
+     */
+    public function getFile(): ?File
+    {
+        return $this->file;
+    }
+
+    /**
+     * @param File|UploadedFile $file
+     */
+    public function setFile(File $file = null): void
+    {
+        if ($file) {
+            $this->file = $file;
+        }
+    }
+
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Trick", inversedBy="images")
      */
     private $trick;
+
 
     /**
      * @return mixed
@@ -73,6 +100,11 @@ class Image
     public function setTrick($trick): void
     {
         $this->trick = $trick;
+    }
+
+    public function __toString()
+    {
+        return $this->getUrl();
     }
 
 

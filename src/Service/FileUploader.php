@@ -3,47 +3,32 @@
 
 namespace App\Service;
 
-use App\Entity\Trick;
-use Doctrine\ORM\Event\LifecycleEventArgs;
+
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\HttpFoundation\File;
-use App\Service\FileUploader;
 
-
-class ImageUploadListener
+class FileUploader
 {
-    private $targetDir;
+    private $targetDirectory;
 
-    public function __construct($targetDir)
+    public function __construct($targetDirectory)
     {
-        $this->targetDir = $targetDir;
+        $this->targetDirectory = $targetDirectory;
     }
 
     public function upload(UploadedFile $file)
     {
         $fileName = md5(uniqid()).'.'.$file->guessExtension();
 
-        $file->move($this->getTargetDir(), $fileName);
+        $file->move($this->getTargetDirectory(), $fileName);
 
         return $fileName;
     }
 
-    public function getTargetDir()
+    public function getTargetDirectory()
     {
-        return $this->targetDir;
+        return $this->targetDirectory;
     }
-
-    public function postLoad(LifecycleEventArgs $args)
-    {
-        $entity = $args->getEntity();
-
-        if(!$entity instanceof Trick) {
-            return;
-        }
-
-        if($fileName = $entity->getImages()) {
-            $entity->setImages(new File($this->uploader->getTargetDir().'/'.$fileName));
-        }
-    }
-
 }
+
+
+
