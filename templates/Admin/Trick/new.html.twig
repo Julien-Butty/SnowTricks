@@ -18,12 +18,12 @@
             var $collectionHolder;
 
             var $addImageLink = $('<a href="#" class="add_image_link">Ajouter une image</a>');
-            var $newLinkLi = $('<li></li>').append($addImageLink);
+            var $newLinkLi = $('<div></div>').append($addImageLink);
 
             var $collectionVideo;
 
             var $addVideoLink = $('<a href="#" class="add_video_link">Ajouter une video</a>');
-            var $newLinkLi2 = $('<li></li>').append($addVideoLink);
+            var $newLinkLi2 = $('<div></div>').append($addVideoLink);
 
             $collectionHolder = $('#tricks_form_images');
 
@@ -48,7 +48,7 @@
 
                 $collectionHolder.data('index', index + 1);
 
-                var $newFormLi = $('<li></li>').append(newForm);
+                var $newFormLi = $('<div></div>').append(newForm);
 
                 $newFormLi.append('<a href="#" class="remove-image">x</a>');
 
@@ -64,7 +64,7 @@
             }
 
 
-            $collectionVideo = $('ul.videos');
+            $collectionVideo = $('#tricks_form_videos');
 
             $collectionVideo.append($newLinkLi2);
 

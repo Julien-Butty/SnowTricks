@@ -8,7 +8,7 @@
     {% spaceless %}
         {% for image in trick.images %}
         {% if image is not null %}
-            <img class="card-img-top  " src="{{ asset('uploads/images/'~image.url) }}" alt="Card image cap">
+            <img class="mr-3" src="{{ asset('uploads/images/'~image.url)|imagine_filter('squared_thumbnail') }}" alt="Card image cap">
             {% endif %}
             {% endfor %}
         {% endspaceless %}
@@ -21,14 +21,14 @@
             var $collectionHolder;
 
             var $addImageLink = $('<a href="#" class="add_image_link">Ajouter une image</a>');
-            var $newLinkLi = $('<li></li>').append($addImageLink);
+            var $newLinkLi = $('<div></div>').append($addImageLink);
 
             var $collectionVideo;
 
             var $addVideoLink = $('<a href="#" class="add_video_link">Ajouter une video</a>');
-            var $newLinkLi2 = $('<li></li>').append($addVideoLink);
+            var $newLinkLi2 = $('<div></div>').append($addVideoLink);
 
-            $collectionHolder = $('ul.images');
+            $collectionHolder = $('#tricks_form_images');
 
             $collectionHolder.append($newLinkLi);
 
@@ -51,7 +51,7 @@
 
                 $collectionHolder.data('index', index + 1);
 
-                var $newFormLi = $('<li></li>').append(newForm);
+                var $newFormLi = $('<div></div>').append(newForm);
 
                 $newFormLi.append('<a href="#" class="remove-image">x</a>');
 
@@ -67,7 +67,7 @@
             }
 
 
-            $collectionVideo = $('ul.videos');
+            $collectionVideo = $('#tricks_form_videos');
 
             $collectionVideo.append($newLinkLi2);
 
@@ -83,7 +83,6 @@
 
         })
     </script>
-
 
 
 {% endblock %}

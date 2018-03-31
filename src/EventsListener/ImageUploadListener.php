@@ -37,30 +37,31 @@ class ImageUploadListener
     }
 
     private function uploadFile($entity)
-    {
-//        dump('upload');
-//        if (!$entity instanceof Trick) {
-//            return;
-//        }
-//        foreach ($entity->getImages() as $image) {
-//            dump('check image');
-//
-//            if ($image->getFile() instanceof UploadedFile) {
-//                dump('new upload');
-//                $fileName = $this->uploader->upload($image->getFile());
-//                $image->setUrl($fileName);
-//            }
-//        }
-        if (!$entity instanceof Trick ) {
+   {
+        dump('upload');
+        if (!$entity instanceof Trick) {
             return;
         }
+        foreach ($entity->getImages() as $image) {
+            dump('check image');
 
-        $file = $entity->getImages();
+            if ($image->getFile() instanceof UploadedFile) {
+                dump('new upload');
+                $fileName = $this->uploader->upload($image->getFile());
+                $image->setUrl($fileName);
 
-        if ($file instanceof UploadedFile) {
-            $fileName = $this->uploader->upload($file);
-            $entity->setImages($fileName);
+            }
         }
+////        if (!$entity instanceof Trick ) {
+////            return;
+////        }
+//
+//        $file = $entity->getImages();
+//
+//        if ($file instanceof UploadedFile) {
+//            $fileName = $this->uploader->upload($file);
+//            $entity->setImages($fileName);
+//        }
 
 
     }

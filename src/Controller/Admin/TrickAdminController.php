@@ -53,34 +53,28 @@ class TrickAdminController extends Controller
 
             $trick = $form->getData();
 
-            $images = $trick->getImages();
-            $videos = $trick->getVideos();
+//            $images = $trick->getImages();
+//            $videos = $trick->getVideos();
 
 
-            foreach ($images as $image) {
+//            foreach ($images as $image) {
+//
+//                /** @var UploadedFile $file */
+//                $file = $image->getFile();
+//
+//                $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+//
+//                $file->move(
+//                    $this->getParameter('images_directory'),
+//                    $fileName
+//                );
+//
+//                $image->setUrl($fileName);
+//                $image->setTrick($trick);
+//
+//            }
 
-                /** @var UploadedFile $file */
-                $file = $image->getFile();
 
-                $fileName = md5(uniqid()) . '.' . $file->guessExtension();
-
-                $file->move(
-                    $this->getParameter('images_directory'),
-                    $fileName
-                );
-
-                $image->setUrl($fileName);
-                $image->setTrick($trick);
-
-            }
-
-            foreach ($videos as $video) {
-
-                $video->setTrick($trick);
-                $video->extractIdentif();
-                $video->setDate(new \DateTime());
-
-            }
 
 
             $trick->setUser($this->getUser());

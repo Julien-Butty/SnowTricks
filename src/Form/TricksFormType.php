@@ -35,10 +35,16 @@ class TricksFormType extends AbstractType
             ])
             ->add('images', CollectionType::class, [
                 'entry_type' => ImageType::class,
-                'allow_add' => true
+                'allow_add' => true,
+                'by_reference'=> false,
+                'label' => false,
+                'allow_delete' => true
             ])->add('videos', CollectionType::class, [
                 'entry_type' => VideoType::class,
-                'allow_add' => true
+                'allow_add' => true,
+                'by_reference' => false,
+                'label' =>false,
+                'allow_delete'=> true
             ]);
 
 

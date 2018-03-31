@@ -54,7 +54,7 @@ class MainController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
 
 
-            if (false === $checker->isGranted('ROLE_MANAGE_TRICKS')) {
+            if (false === $checker->isGranted('ROLE_ADMIN')) {
                 throw new AccessDeniedException('Vous devez être connecté pour poster un message.');
             }
 

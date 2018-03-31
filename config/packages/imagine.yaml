@@ -51,3 +51,21 @@ liip_imagine:
                     size:     [256, 256]
                     position: center
                     color:    '#fff'
+
+        homeList:
+
+            quality: 85
+
+            filters:
+
+                thumbnail:
+                    size: [286, 100]
+
+
+        avatar:
+            quality: 85
+
+            filters:
+
+                thumbnail:
+                    size: [44,44]

@@ -7,6 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\VideoRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Video
 {
@@ -51,6 +52,11 @@ class Video
      * @ORM\JoinColumn(name="trick_id", onDelete="SET NULL")
      */
     private $trick;
+
+    public function __construct()
+    {
+        $this->date = new \DateTime();
+    }
 
     /**
      * @return mixed

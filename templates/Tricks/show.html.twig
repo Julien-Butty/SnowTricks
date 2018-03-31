@@ -12,7 +12,7 @@
             {% if trick.images.first %}
                 <img src="{{ asset('uploads/images/'~trick.images.first.url) }}" alt="">
             {% else %}
-                <img src="{{ asset('vendor/image/snowboarder.jpg') }}" class="img-fluid mb-5 imgBack"
+                <img src="{{ asset('img/trick/snowboarder.jpg') }}" class="img-fluid mb-5 imgBack"
                      alt="Responsive image">
             {% endif %}
             <div class="caption">
@@ -21,18 +21,20 @@
         </div>
 
 
-    <div class="container mt-5 mb-5">
-        <div class="text-center">
-    {{ include('Admin/Trick/delete_form.html.twig') }}
-    </div>
-    </div>
+        <div class="container mt-5 mb-5">
+            <div class="text-center">
+                {{ include('Admin/Trick/delete_form.html.twig') }}
+            </div>
+        </div>
 
         <!-- Boucle images -->
         <div class="d-flex justify-content-around pt-5">
             {% for image in trick.images %}
 
             <div class="card mb-3 " style="width: 10rem;">
-                <img class="card-img-top  " src="{{ asset('uploads/images/'~image.url)|imagine_filter('squared_thumbnail') }}" alt="Card image cap">
+                <img class="card-img-top  "
+                     src="{{ asset('uploads/images/'~image.url)|imagine_filter('squared_thumbnail') }}"
+                     alt="Card image cap">
             </div>
 
             {% if loop.index is divisible by (4) and not loop.last %}
@@ -69,7 +71,7 @@
 
 
         <div class="container mt-5 mb-5">
-            {% if is_granted('ROLE_MANAGE_TRICKS') %}
+            {% if is_granted('ROLE_ADMIN') %}
                 {{ form_start(chatForm) }}
                 {{ form_row(chatForm.message) }}
                 <button type="submit" class="btn btn-primary" formnovalidate>Envoyer</button>
@@ -78,9 +80,15 @@
 
             {% for chat in trick.chats %}
                 <div class="media bg-light">
-                    <img class="mr-3"
-                         src="{{ asset('img/avatar/defAvatar.png') }}"
-                         alt="Generic placeholder image">
+                    {% if chat.user.avatar %}
+                        <img class="mr-3"
+                             src="{{ asset('uploads/avatars/'~chat.user.avatar) | imagine_filter('avatar') }}"
+                             alt="Generic placeholder image">
+                    {% else %}
+                        <img class="mr-3"
+                             src="{{ asset('img/avatar/defAvatar.png')|imagine_filter('avatar') }}"
+                             alt="Generic placeholder image">
+                    {% endif %}
                     <div class="media-body">
                         <div class="d-flex flex-row">
 

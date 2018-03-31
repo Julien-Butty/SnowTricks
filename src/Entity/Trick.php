@@ -105,7 +105,7 @@ class Trick
     public function addVideo(Video $video)
     {
         $this->videos[] = $video;
-        $video->setTrick($video);
+        $video->setTrick($this);
     }
 
     public function removeVideo(Video $video)
