@@ -3,19 +3,16 @@
 namespace App\Controller;
 
 use App\Entity\Chat;
-use App\Entity\User;
 use App\Form\ChatType;
 use Doctrine\ORM\EntityManagerInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Finder\Exception\AccessDeniedException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Entity\Trick;
-use App\Entity\Image;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
-use Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface;
+
 
 class MainController extends Controller
 {
@@ -24,7 +21,6 @@ class MainController extends Controller
      */
     public function homepage()
     {
-
         $em = $this->getDoctrine()->getManager();
 
         $tricks = $em->getRepository('App:Trick')
@@ -32,7 +28,6 @@ class MainController extends Controller
 
         return $this->render('Tricks/trickslist.html.twig', [
             'tricks' => $tricks,
-
         ]);
     }
 
@@ -60,25 +55,15 @@ class MainController extends Controller
 
             /** @var Chat $chat */
             $chat = $form->getData();
-
-
             $chat->setUser($this->getUser());
             $chat->setTrick($trick);
 
             $em->persist($chat);
-
             $em->flush();
-
         }
-
-
         return $this->render('Tricks/show.html.twig', array(
             'trick' => $trick,
             'chatForm' => $form->createView(),
-
         ));
-
     }
-
-
 }

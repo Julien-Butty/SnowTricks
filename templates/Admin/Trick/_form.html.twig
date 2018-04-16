@@ -1,12 +1,62 @@
+{% import _self as formMacros %}
+
+{% macro printTrickImageRow(imageForm) %}
+    <div class="col-sm-4 js-item">
+        <a href="#" class="js-remove-image pull-right">
+            <span class="fa fa-close"></span>
+        </a>
+        {{ form_errors(imageForm) }}
+        {{ form_row(imageForm.file) }}
+    </div>
+{% endmacro %}
+
+{% import _self as videoMacros %}
+{% macro printTrickVideoRow(videoForm) %}
+    <div class="col-sm-4 js-item">
+        <a href="#" class="js-remove-video pull-right">
+            <span class="fa fa-close"></span>
+        </a>
+        {{ form_errors(videoForm) }}
+        {{ form_row(videoForm.url) }}
+    </div>
+{% endmacro %}
+
 {{ form_start(trickForm) }}
 {{ form_row(trickForm.title) }}
 {{ form_row(trickForm.trick_group) }}
 {{ form_row(trickForm.content) }}
 
-{{ form_row(trickForm.images) }}
-{{ form_row(trickForm.videos) }}
+
+<h3>Images</h3>
+<div class="row js-image-wrapper"
+     data-prototype="{{ formMacros.printTrickImageRow(trickForm.images.vars.prototype)|e('html_attr') }}"
+     data-index="{{ trickForm.images|length }}"
+>
+    {% for imageForm in trickForm.images %}
+        {{ formMacros.printTrickImageRow(imageForm) }}
+    {% endfor %}
+    <a href="#" class="js-add-image">
+        <span class="fa fa-plus-circle"></span>
+        Ajouter une image
+    </a>
+</div>
+
+<h3>Video</h3>
+<div class="row js-video-wrapper"
+     data-prototype="{{ videoMacros.printTrickVideoRow(trickForm.videos.vars.prototype)|e('html_attr') }}"
+     data-index="{{ trickForm.videos|length }}"
+>
+    {% for videoForm in trickForm.videos %}
+    {{ formMacros.printTrickVideoRow(videoForm) }}
+    {% endfor %}
+    <a href="#" class="js-add-video">
+        <span class="fa fa-plus-circle"></span>
+        Ajouter une video
+    </a>
+</div>
 
 
+<button type="submit" class="btn btn-primary mt-5" formnovalidate>Enregistrer</button>
 
-<button type="submit" class="btn btn-primary" formnovalidate>Save</button>
 {{ form_end(trickForm) }}
+

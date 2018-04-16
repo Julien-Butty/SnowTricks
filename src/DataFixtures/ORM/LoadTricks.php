@@ -28,6 +28,7 @@ class LoadTricks extends Fixture implements DependentFixtureInterface
         $melon->setTitle('Melon');
         $melon->setContent('Il faut d\'abord faire un saut, un simple ollie par exemple. Bien plier les jambes une fois en l’air pour se regrouper, et aller chercher la planche avec la main. Attention il ne faut pas que le buste se casse en deux pour aller chercher la board : ce sont bien les genoux qui remontent pour amener la board vers la main. Pour effectuer un Melon : la main avant grabbe la carre bakside entre les talons. En désaxant le corps et la board cela peut faire un Method ou un Backside Air.');
         $manager->persist($melon);
+        $this->addReference('Melon', $melon);
 
 
         $indy = new Trick();
@@ -35,6 +36,7 @@ class LoadTricks extends Fixture implements DependentFixtureInterface
         $indy->setTitle('Indy');
         $indy->setContent('Il faut d\'abord faire un saut, un simple ollie par exemple. Bien plier les jambes une fois en l’air pour se regrouper, et aller chercher la planche avec la main. Attention il ne faut pas que le buste se casse en deux pour aller chercher la board : ce sont bien les genoux qui remontent pour amener la board vers la main. Pour effectuer un Indy : la main arrière vient graber la carre frontside entre les pieds. Sur un saut droit c’est un Indy Grab, sur un hip ou un quarter en front c’est un frontside indy ou frontside grab alors que sur un saut en back (3.6 back par exemple) ça sera un backside Indy..');
         $manager->persist($indy);
+        $this->addReference('Indy', $indy);
 
         $f720 = new Trick();
         $f720->setTrickGroup($this->getReference('group_rotation'));
@@ -58,6 +60,7 @@ Le Frontside 7, comment ça marche :
 
 Au boulot !');
         $manager->persist($f720);
+        $this->addReference('F720', $f720);
 
 
         $b180 = new Trick();
@@ -74,6 +77,7 @@ Au boulot !');
 Avant d’essayer un 180 back, le mieux est d\'essayer de bien rider en switch pour que ce ne soit pas trop la panique à l’atterrissage et de bien repérer le terrain et les autres rideurs pour ne pas provoquer de collisions. 
 À vous de jouer ! Comme d’habitude, allez y progressivement, amusez vous  et prenez beaucoup de plaisir pour faire des backside 180, qui est à notre avis un de plus beaux tricks du snowboard…');
         $manager->persist($b180);
+        $this->addReference('B180', $b180);
 
 
         $valeflip = new Trick();
@@ -86,16 +90,17 @@ Ensuite on vient rapidement grabber avec l’autre main (photo 3) et on reste en
 Et enfin, comme pour la plupart des tricks, on vient chercher la réception avec le regard afin d’anticiper (photos 5-7). Si vous êtes dans le bon timing tout se passera bien.
 Le plus simple pour apprendre reste de se lancer, donc je vous conseille d’essayer, vous allez voir c’est pas si dur !');
         $manager->persist($valeflip);
+        $this->addReference('Valeflip', $valeflip);
 
-
-        $tailslide = new Trick();
-        $tailslide->setTrickGroup($this->getReference('group_slide'));
-        $tailslide->setTitle('Cab 2.7 in Bs Tailslide 2.7 out');
-        $tailslide->setContent('Arriver en fakie tout en regardant bien le kicker, puis à l’approche du module, popper et effectuer un trois quarts de tour (photo 1).
+        $cab= new Trick();
+        $cab->setTrickGroup($this->getReference('group_slide'));
+        $cab->setTitle('Cab 2.7 in Bs Tailslide 2.7 out');
+        $cab->setContent('Arriver en fakie tout en regardant bien le kicker, puis à l’approche du module, popper et effectuer un trois quarts de tour (photo 1).
 Le fait d’amener le haut du corps face au rail vous permettra de tourner plus facilement vos jambes. Une fois posé sur le tail de votre planche, placez votre poids sur la jambe droite (photo 4), stabilisez-vous en bloquant vos épaules afin de ne pas faire de surrotation sur le rail (photo 6). 
 Anticipez la sortie en venant regarder au-dessus de votre épaule (photo 9), et finissez par une légère rotation du haut du corps afin que le bas suive et effectue un 2.7 en sortie (photo 10 à 12). 
 Si tout marche bien, surtout ne regardez pas derrière vous, mais dirigez vos yeux vers un point au loin, et gardez une attitude de sobre nonchalance. Bingo.');
-        $manager->persist($tailslide);
+        $manager->persist($cab);
+        $this->addReference('Cab', $cab);
 
 
         $ollie = new Trick();
@@ -113,6 +118,7 @@ Si tout marche bien, surtout ne regardez pas derrière vous, mais dirigez vos ye
 
 Le mieux c’est de commencer à s’entrainer à faire des ollies à plat sur la piste, puis en profitant des petits reliefs de bord de piste. Quand on se sent vraiment  à l’aise, on peut commencer à essayer sur de plus gros sauts (kickers de snowpark par exemple). Ne pas hésiter à être créatif, repérer toute variation de terrain qui peut être un bon spot pour envoyer un ollie, et transformer la montagne en terrain de jeu…');
         $manager->persist($ollie);
+        $this->addReference('Ollie', $ollie);
 
         $manager->flush();
 

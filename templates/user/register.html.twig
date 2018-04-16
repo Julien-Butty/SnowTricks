@@ -1,11 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <div class="gradient-background"></div>
 <div class="container">
     <div class="row">
-        <div class="col-12">
-            <h1>S'enregistrer</h1>
-
+        <div class="col-12 pt-5">
+            <h1 class="text-white mb-3 pb-3">S'enregistrer</h1>
+<div class="text-white">
             {{ form_start(form) }}
             {{ form_row(form.username) }}
             {{ form_row(form.email) }}
@@ -14,7 +15,7 @@
             {{ form_row(form.plainPassword.second , {
                 'label': 'Confirmez le mot de passe'}) }}
             {{ form_row(form.avatar) }}
-
+</div>
             <button type="submit" class="btn btn-primary">Envoyer</button>
             {{ form_end(form) }}
         </div>

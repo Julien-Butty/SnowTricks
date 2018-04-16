@@ -1,24 +1,26 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <h1>Login</h1>
+    <div class="gradient-background"></div>
+    <div class="container  w-75 h-75 mt-5 ">
+        <div class="row  pt-5">
+            <div class="col-xs-12 ">
+                <h1 class="text-white">Login</h1>
 
                 {% if error %}
                     <div class="alert alert-danger">
                        {{ error.messageKey|trans(error.messageData, 'security') }}
                     </div>
                 {% endif %}
-
+<div class="text-white">
                 {{ form_start(form) }}
                     {{ form_row(form._username) }}
                     {{ form_row(form._password) }}
+</div>
                 <button type="submit" class="btn btn-success">Connexion <span class="fa fa-lock"></span></button>
                 {{ form_end(form) }}
-                <a href="{{ path('user_register') }}">S'enregistrer</a>
-                <a href="{{ path('forgotten_password') }}">Mot de passe oublié</a>
+                <a href="{{ path('user_register') }}" class="ml-3">S'enregistrer</a>
+                <a href="{{ path('forgotten_password') }}" class="ml-3">Mot de passe oublié</a>
             </div>
         </div>
     </div>

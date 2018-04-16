@@ -2,54 +2,59 @@
 
 {% block body %}
     <div class="thumbnail text-center">
-        <img src="{{ asset('img/trick/snowboarder.jpg') }}" class="img-fluid mb-5 imgBack" alt="Responsive image">
+        <img src="{{ asset('img/trick/snowboarder2.jpg')}}" class="img-fluid   " alt="Responsive image">
+
         <div class="caption">
-            <h1 class="font-italic text-dark textShad">Born to board...</h1>
+            <h1 class="font-italic  textShad ">Born to board...</h1>
+        </div>
+    </div>
+    <div class="gradient-line p-1"></div>
+    <div class="container mt-5  ">
+        <div class="row align-items-center ">
+            {% for trick in tricks %}
+                <div class="col-12 col-md-3  ">
+                    <div class="card mb-3  " style="width: 17rem;">
+                        {% if trick.images.first %}
+                            <img class="card-img-top "
+                                 src="{{ asset('uploads/images/'~trick.images.first.url)|imagine_filter('homeList') }}"
+                                 alt="">
+                        {% else %}
+                            <img class="card-img-top "
+                                 src="{{ asset('img/trick/snowboarder.jpg')| imagine_filter('homeList') }}"
+                                 alt="Card image cap">
+                        {% endif %}
+                        <div class="card-body p-2 rounded-bottom">
+                            <a href="{{ path('trick_show', {'slug': trick.slug}) }}"
+                               class="card-link ">{{ trick.title|length > 10 ? trick.title|slice(0,10)~'...': trick.title }}</a>
+                            {% if is_granted('ROLE_USER') %}
+                                <a href="#"
+                                   class="card-link float-right">{{ include('Admin/Trick/delete_form.html.twig') }}</a>
+                                <a href="{{ path('admin_trick_edit', {'slug':trick.slug}) }}"
+                                   class=" card-link float-right"><i
+                                            class=" btn  fa fa-pencil" id="editBtn"></i></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+
+            {% endfor %}
         </div>
     </div>
 
-    <div class="d-flex justify-content-around mt-2  ">
-    {% for trick in tricks %}
-
-
-        <div class="card mb-3 " style="width: 18rem;">
-           {% if trick.images.first %}
-            <img class="card-img-top" src="{{ asset('uploads/images/'~trick.images.first.url)|imagine_filter('homeList') }}" alt="">
-            {% else %}
-            <img class="card-img-top " src="{{ asset('img/trick/snowboarder.jpg')| imagine_filter('homeList')}}" alt="Card image cap">
-            {% endif %}
-            <div class="card-body p-2">
-                <a href="{{ path('trick_show', {'slug': trick.slug}) }}" class="card-link ">{{ trick.title }}</a>
-                {% if is_granted('ROLE_USER') %}
-                    <a href="#" class="card-link float-right"><i class="fa fa-trash"></i></a>
-                    <a href="{{ path('admin_trick_edit', {'slug':trick.slug}) }}" class="card-link float-right"><i
-                                class="fa fa-pencil"></i></a>
-                {% endif %}
-            </div>
-        </div>
-
-
-        {% if loop.index is divisible by (4) and not loop.last %}
-            </div>
-            <div class="d-flex justify-content-around mt-2  ">
-        {% endif %}
-    {% endfor %}
     </div>
 
-    <div class="container">
+    <div class="container pb-3">
         <div class="text-center pt-1">
-            <button id="loadMore" type="submit" class="btn btn-primary"><i class="fa fa-spinner" aria-hidden="true"></i>
+            <button id="loadMore" type="submit" class="btn rounded "><i class="fa fa-spinner" aria-hidden="true"></i>
                 Load more
             </button>
         </div>
 
-        <p class="totop">
-            <a href="#top">Back to top</a>
+        <p class="totop text-right">
+            <a href="#top"><i class="fa fa-arrow-circle-up fa-2x"></i></a>
         </p>
     </div>
-
-
-
 
 
 {% endblock %}

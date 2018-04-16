@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /Users/julienbutty/Sites/localhost/snowTricks/src</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href=".css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href=".css/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href=".css/style.css" rel="stylesheet" type="text/css">
+  <!--[if lt IE 9]>
+  <script src=".js/html5shiv.min.js"></script>
+  <script src=".js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="index.html">/Users/julienbutty/Sites/localhost/snowTricks/src</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controller/Admin/TrickAdminController.php.html#30">App\Controller\Admin\TrickAdminController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Migrations/Version20180401123039.php.html#11">DoctrineMigrations\Version20180401123039</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ResetPasswordType.php.html#13">App\Form\ResetPasswordType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/TricksFormType.php.html#20">App\Form\TricksFormType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/UserRegistrationFormType.php.html#15">App\Form\UserRegistrationFormType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/VideoType.php.html#11">App\Form\VideoType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Kernel.php.html#11">App\Kernel</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Migrations/Version20180315180558.php.html#11">DoctrineMigrations\Version20180315180558</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ChatRepository.php.html#9">App\Repository\ChatRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ImageType.php.html#11">App\Form\ImageType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ImageRepository.php.html#9">App\Repository\ImageRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/TrickGroupRepository.php.html#9">App\Repository\TrickGroupRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/TricksRepository.php.html#9">App\Repository\TricksRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#9">App\Repository\UserRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/VideoRepository.php.html#9">App\Repository\VideoRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/LoginFormAuthenticator.php.html#30">App\Security\LoginFormAuthenticator</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/LoginFormType.php.html#11">App\Form\LoginFormType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ForgottenPasswordType.php.html#11">App\Form\ForgottenPasswordType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/MainController.php.html#18">App\Controller\MainController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Doctrine/HashPasswordListener.php.html#18">App\Doctrine\HashPasswordListener</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#22">App\Controller\SecurityController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#22">App\Controller\UserController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/ORM/LoadChats.php.html#19">App\DataFixtures\ORM\LoadChats</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/ORM/LoadGroups.php.html#19">App\DataFixtures\ORM\LoadGroups</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/ORM/LoadTricks.php.html#14">App\DataFixtures\ORM\LoadTricks</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/ORM/LoadUsers.php.html#14">App\DataFixtures\ORM\LoadUsers</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Chat.php.html#11">App\Entity\Chat</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ChatType.php.html#11">App\Form\ChatType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Image.php.html#14">App\Entity\Image</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#13">App\Entity\Trick</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/TrickGroup.php.html#10">App\Entity\TrickGroup</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#16">App\Entity\User</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#12">App\Entity\Video</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EventsListener/ImageUploadListener.php.html#14">App\EventsListener\ImageUploadListener</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/FileUploader.php.html#9">App\Service\FileUploader</a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Entity/Video.php.html#12">App\Entity\Video</a></td><td class="text-right">870</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#13">App\Entity\Trick</a></td><td class="text-right">756</td></tr>
+       <tr><td><a href="Entity/User.php.html#16">App\Entity\User</a></td><td class="text-right">552</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#22">App\Controller\UserController</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Entity/Image.php.html#14">App\Entity\Image</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Kernel.php.html#11">App\Kernel</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Controller/Admin/TrickAdminController.php.html#30">App\Controller\Admin\TrickAdminController</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="Security/LoginFormAuthenticator.php.html#30">App\Security\LoginFormAuthenticator</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="EventsListener/ImageUploadListener.php.html#14">App\EventsListener\ImageUploadListener</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="Doctrine/HashPasswordListener.php.html#18">App\Doctrine\HashPasswordListener</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Controller/MainController.php.html#18">App\Controller\MainController</a></td><td class="text-right">30</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controller/Admin/TrickAdminController.php.html#33"><abbr title="App\Controller\Admin\TrickAdminController::indexAction">indexAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#193"><abbr title="App\Entity\Video::extractIdentif">extractIdentif</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#128"><abbr title="App\Entity\Video::getDate">getDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#136"><abbr title="App\Entity\Video::setDate">setDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#144"><abbr title="App\Entity\Video::getUrl">getUrl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#152"><abbr title="App\Entity\Video::setUrl">setUrl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#158"><abbr title="App\Entity\Video::youtubeId">youtubeId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#166"><abbr title="App\Entity\Video::dailymotionId">dailymotionId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#177"><abbr title="App\Entity\Video::vimeoId">vimeoId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#206"><abbr title="App\Entity\Video::url">url</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#112"><abbr title="App\Entity\Video::getIdentif">getIdentif</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#226"><abbr title="App\Entity\Video::image">image</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#250"><abbr title="App\Entity\Video::video">video</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EventsListener/ImageUploadListener.php.html#18"><abbr title="App\EventsListener\ImageUploadListener::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EventsListener/ImageUploadListener.php.html#23"><abbr title="App\EventsListener\ImageUploadListener::prePersist">prePersist</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EventsListener/ImageUploadListener.php.html#30"><abbr title="App\EventsListener\ImageUploadListener::preUpdate">preUpdate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EventsListener/ImageUploadListener.php.html#40"><abbr title="App\EventsListener\ImageUploadListener::uploadFile">uploadFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EventsListener/ImageUploadListener.php.html#69"><abbr title="App\EventsListener\ImageUploadListener::postLoad">postLoad</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ChatType.php.html#13"><abbr title="App\Form\ChatType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#120"><abbr title="App\Entity\Video::setIdentif">setIdentif</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#104"><abbr title="App\Entity\Video::setType">setType</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ForgottenPasswordType.php.html#13"><abbr title="App\Form\ForgottenPasswordType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#196"><abbr title="App\Entity\User::setAvatar">setAvatar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#140"><abbr title="App\Entity\User::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#147"><abbr title="App\Entity\User::setId">setId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#154"><abbr title="App\Entity\User::getUsername">getUsername</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#161"><abbr title="App\Entity\User::setPassword">setPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#168"><abbr title="App\Entity\User::setUsername">setUsername</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#175"><abbr title="App\Entity\User::getEmail">getEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#182"><abbr title="App\Entity\User::setEmail">setEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#189"><abbr title="App\Entity\User::getAvatar">getAvatar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#200"><abbr title="App\Entity\User::getRoles">getRoles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#96"><abbr title="App\Entity\Video::getType">getType</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#208"><abbr title="App\Entity\User::setRoles">setRoles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#212"><abbr title="App\Entity\User::getSalt">getSalt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#216"><abbr title="App\Entity\User::eraseCredentials">eraseCredentials</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#56"><abbr title="App\Entity\Video::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#64"><abbr title="App\Entity\Video::getTrick">getTrick</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#72"><abbr title="App\Entity\Video::setTrick">setTrick</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#80"><abbr title="App\Entity\Video::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Video.php.html#88"><abbr title="App\Entity\Video::setId">setId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ChatType.php.html#22"><abbr title="App\Form\ChatType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ImageType.php.html#13"><abbr title="App\Form\ImageType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#128"><abbr title="App\Entity\User::setPlainPassword">setPlainPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/VideoRepository.php.html#11"><abbr title="App\Repository\VideoRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ImageRepository.php.html#17"><abbr title="App\Repository\ImageRepository::findImage">findImage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/TrickGroupRepository.php.html#11"><abbr title="App\Repository\TrickGroupRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/TrickGroupRepository.php.html#17"><abbr title="App\Repository\TrickGroupRepository::AlphabeticalOrder">AlphabeticalOrder</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/TricksRepository.php.html#11"><abbr title="App\Repository\TricksRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/TricksRepository.php.html#17"><abbr title="App\Repository\TricksRepository::findAllById">findAllById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#11"><abbr title="App\Repository\UserRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#17"><abbr title="App\Repository\UserRepository::findUserByEmail">findUserByEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/LoginFormAuthenticator.php.html#39"><abbr title="App\Security\LoginFormAuthenticator::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ChatRepository.php.html#11"><abbr title="App\Repository\ChatRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/LoginFormAuthenticator.php.html#47"><abbr title="App\Security\LoginFormAuthenticator::getCredentials">getCredentials</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/LoginFormAuthenticator.php.html#65"><abbr title="App\Security\LoginFormAuthenticator::getUser">getUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/LoginFormAuthenticator.php.html#75"><abbr title="App\Security\LoginFormAuthenticator::checkCredentials">checkCredentials</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/LoginFormAuthenticator.php.html#86"><abbr title="App\Security\LoginFormAuthenticator::getLoginUrl">getLoginUrl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/LoginFormAuthenticator.php.html#92"><abbr title="App\Security\LoginFormAuthenticator::onAuthenticationSuccess">onAuthenticationSuccess</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/LoginFormAuthenticator.php.html#104"><abbr title="App\Security\LoginFormAuthenticator::supports">supports</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/FileUploader.php.html#13"><abbr title="App\Service\FileUploader::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/FileUploader.php.html#18"><abbr title="App\Service\FileUploader::upload">upload</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ImageRepository.php.html#11"><abbr title="App\Repository\ImageRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Migrations/Version20180401123039.php.html#21"><abbr title="DoctrineMigrations\Version20180401123039::down">down</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ImageType.php.html#23"><abbr title="App\Form\ImageType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/UserRegistrationFormType.php.html#31"><abbr title="App\Form\UserRegistrationFormType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/LoginFormType.php.html#13"><abbr title="App\Form\LoginFormType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/LoginFormType.php.html#21"><abbr title="App\Form\LoginFormType::getBlockPrefix">getBlockPrefix</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ResetPasswordType.php.html#15"><abbr title="App\Form\ResetPasswordType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ResetPasswordType.php.html#25"><abbr title="App\Form\ResetPasswordType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/TricksFormType.php.html#22"><abbr title="App\Form\TricksFormType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/TricksFormType.php.html#29"><abbr title="App\Form\TricksFormType::anonymousFunction:29#242">anonymousFunction:29#242</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/TricksFormType.php.html#53"><abbr title="App\Form\TricksFormType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/UserRegistrationFormType.php.html#17"><abbr title="App\Form\UserRegistrationFormType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/VideoType.php.html#13"><abbr title="App\Form\VideoType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Migrations/Version20180401123039.php.html#13"><abbr title="DoctrineMigrations\Version20180401123039::up">up</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/VideoType.php.html#22"><abbr title="App\Form\VideoType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Kernel.php.html#17"><abbr title="App\Kernel::getCacheDir">getCacheDir</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Kernel.php.html#22"><abbr title="App\Kernel::getLogDir">getLogDir</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Kernel.php.html#27"><abbr title="App\Kernel::registerBundles">registerBundles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Kernel.php.html#37"><abbr title="App\Kernel::configureContainer">configureContainer</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Kernel.php.html#50"><abbr title="App\Kernel::configureRoutes">configureRoutes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Migrations/Version20180315180558.php.html#13"><abbr title="DoctrineMigrations\Version20180315180558::up">up</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Migrations/Version20180315180558.php.html#24"><abbr title="DoctrineMigrations\Version20180315180558::down">down</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#133"><abbr title="App\Entity\User::getPassword">getPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#121"><abbr title="App\Entity\User::getPlainPassword">getPlainPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Admin/TrickAdminController.php.html#44"><abbr title="App\Controller\Admin\TrickAdminController::newAction">newAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Chat.php.html#98"><abbr title="App\Entity\Chat::getMessage">getMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Chat.php.html#42"><abbr title="App\Entity\Chat::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Chat.php.html#51"><abbr title="App\Entity\Chat::addUser">addUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Chat.php.html#57"><abbr title="App\Entity\Chat::removeUser">removeUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Chat.php.html#65"><abbr title="App\Entity\Chat::getUser">getUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Chat.php.html#73"><abbr title="App\Entity\Chat::setUser">setUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Chat.php.html#82"><abbr title="App\Entity\Chat::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Chat.php.html#90"><abbr title="App\Entity\Chat::setId">setId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Chat.php.html#106"><abbr title="App\Entity\Chat::setMessage">setMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Doctrine/HashPasswordListener.php.html#42"><abbr title="App\Doctrine\HashPasswordListener::encodePassword">encodePassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Chat.php.html#118"><abbr title="App\Entity\Chat::setDate">setDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Chat.php.html#128"><abbr title="App\Entity\Chat::getDate">getDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Chat.php.html#136"><abbr title="App\Entity\Chat::setTrick">setTrick</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Chat.php.html#144"><abbr title="App\Entity\Chat::getTrick">getTrick</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Chat.php.html#152"><abbr title="App\Entity\Chat::addTrick">addTrick</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Chat.php.html#157"><abbr title="App\Entity\Chat::removeTrick">removeTrick</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Chat.php.html#162"><abbr title="App\Entity\Chat::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Image.php.html#36"><abbr title="App\Entity\Image::getFile">getFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Doctrine/HashPasswordListener.php.html#55"><abbr title="App\Doctrine\HashPasswordListener::preUpdate">preUpdate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Doctrine/HashPasswordListener.php.html#32"><abbr title="App\Doctrine\HashPasswordListener::prePersist">prePersist</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Image.php.html#60"><abbr title="App\Entity\Image::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#82"><abbr title="App\Controller\UserController::forgottenPassword">forgottenPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Admin/TrickAdminController.php.html#77"><abbr title="App\Controller\Admin\TrickAdminController::editAction">editAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Admin/TrickAdminController.php.html#108"><abbr title="App\Controller\Admin\TrickAdminController::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/MainController.php.html#23"><abbr title="App\Controller\MainController::homepage">homepage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/MainController.php.html#44"><abbr title="App\Controller\MainController::showAction">showAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#29"><abbr title="App\Controller\SecurityController::loginAction">loginAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#51"><abbr title="App\Controller\SecurityController::logoutAction">logoutAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#29"><abbr title="App\Controller\UserController::registerAction">registerAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#68"><abbr title="App\Controller\UserController::generateUniqueFileName">generateUniqueFileName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#140"><abbr title="App\Controller\UserController::resetPassword">resetPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Doctrine/HashPasswordListener.php.html#27"><abbr title="App\Doctrine\HashPasswordListener::getSubscribedEvents">getSubscribedEvents</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/ORM/LoadChats.php.html#21"><abbr title="App\DataFixtures\ORM\LoadChats::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/ORM/LoadChats.php.html#43"><abbr title="App\DataFixtures\ORM\LoadChats::getDependencies">getDependencies</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/ORM/LoadGroups.php.html#21"><abbr title="App\DataFixtures\ORM\LoadGroups::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/ORM/LoadTricks.php.html#17"><abbr title="App\DataFixtures\ORM\LoadTricks::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/ORM/LoadTricks.php.html#128"><abbr title="App\DataFixtures\ORM\LoadTricks::getDependencies">getDependencies</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/ORM/LoadUsers.php.html#18"><abbr title="App\DataFixtures\ORM\LoadUsers::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/ORM/LoadUsers.php.html#23"><abbr title="App\DataFixtures\ORM\LoadUsers::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Doctrine/HashPasswordListener.php.html#22"><abbr title="App\Doctrine\HashPasswordListener::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Image.php.html#44"><abbr title="App\Entity\Image::setFile">setFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Image.php.html#68"><abbr title="App\Entity\Image::setId">setId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#112"><abbr title="App\Entity\User::setResetToken">setResetToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/TrickGroup.php.html#22"><abbr title="App\Entity\TrickGroup::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#215"><abbr title="App\Entity\Trick::setTitle">setTitle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#223"><abbr title="App\Entity\Trick::getContent">getContent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#231"><abbr title="App\Entity\Trick::setContent">setContent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#239"><abbr title="App\Entity\Trick::getUser">getUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#247"><abbr title="App\Entity\Trick::setUser">setUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#255"><abbr title="App\Entity\Trick::getTrickGroup">getTrickGroup</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#263"><abbr title="App\Entity\Trick::setTrickGroup">setTrickGroup</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#276"><abbr title="App\Entity\Trick::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/TrickGroup.php.html#30"><abbr title="App\Entity\TrickGroup::setId">setId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#199"><abbr title="App\Entity\Trick::setId">setId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/TrickGroup.php.html#38"><abbr title="App\Entity\TrickGroup::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/TrickGroup.php.html#46"><abbr title="App\Entity\TrickGroup::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/TrickGroup.php.html#56"><abbr title="App\Entity\TrickGroup::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#74"><abbr title="App\Entity\User::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#83"><abbr title="App\Entity\User::getChats">getChats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#89"><abbr title="App\Entity\User::addChat">addChat</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#96"><abbr title="App\Entity\User::removeChat">removeChat</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#104"><abbr title="App\Entity\User::getResetToken">getResetToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#207"><abbr title="App\Entity\Trick::getTitle">getTitle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#191"><abbr title="App\Entity\Trick::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Image.php.html#76"><abbr title="App\Entity\Image::getUrl">getUrl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#103"><abbr title="App\Entity\Trick::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Image.php.html#84"><abbr title="App\Entity\Image::setUrl">setUrl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Image.php.html#92"><abbr title="App\Entity\Image::getTrick">getTrick</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Image.php.html#100"><abbr title="App\Entity\Image::setTrick">setTrick</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Image.php.html#105"><abbr title="App\Entity\Image::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#26"><abbr title="App\Entity\Trick::getSlug">getSlug</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#34"><abbr title="App\Entity\Trick::setSlug">setSlug</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#76"><abbr title="App\Entity\Trick::getDate">getDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#84"><abbr title="App\Entity\Trick::setDate">setDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#115"><abbr title="App\Entity\Trick::getVideos">getVideos</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#183"><abbr title="App\Entity\Trick::removeImage">removeImage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#123"><abbr title="App\Entity\Trick::setVideos">setVideos</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#128"><abbr title="App\Entity\Trick::addVideo">addVideo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#134"><abbr title="App\Entity\Trick::removeVideo">removeVideo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#142"><abbr title="App\Entity\Trick::getChats">getChats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#150"><abbr title="App\Entity\Trick::setChats">setChats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#159"><abbr title="App\Entity\Trick::getImages">getImages</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#167"><abbr title="App\Entity\Trick::setImages">setImages</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#172"><abbr title="App\Entity\Trick::addImage">addImage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/FileUploader.php.html#27"><abbr title="App\Service\FileUploader::getTargetDirectory">getTargetDirectory</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Entity/Video.php.html#226"><abbr title="App\Entity\Video::image">image</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Controller/MainController.php.html#44"><abbr title="App\Controller\MainController::showAction">showAction</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#82"><abbr title="App\Controller\UserController::forgottenPassword">forgottenPassword</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Kernel.php.html#27"><abbr title="App\Kernel::registerBundles">registerBundles</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Controller/Admin/TrickAdminController.php.html#77"><abbr title="App\Controller\Admin\TrickAdminController::editAction">editAction</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Entity/Video.php.html#193"><abbr title="App\Entity\Video::extractIdentif">extractIdentif</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Entity/Video.php.html#206"><abbr title="App\Entity\Video::url">url</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Controller/Admin/TrickAdminController.php.html#44"><abbr title="App\Controller\Admin\TrickAdminController::newAction">newAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#29"><abbr title="App\Controller\UserController::registerAction">registerAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#140"><abbr title="App\Controller\UserController::resetPassword">resetPassword</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Kernel.php.html#50"><abbr title="App\Kernel::configureRoutes">configureRoutes</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="EventsListener/ImageUploadListener.php.html#69"><abbr title="App\EventsListener\ImageUploadListener::postLoad">postLoad</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="EventsListener/ImageUploadListener.php.html#40"><abbr title="App\EventsListener\ImageUploadListener::uploadFile">uploadFile</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Security/LoginFormAuthenticator.php.html#92"><abbr title="App\Security\LoginFormAuthenticator::onAuthenticationSuccess">onAuthenticationSuccess</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Security/LoginFormAuthenticator.php.html#75"><abbr title="App\Security\LoginFormAuthenticator::checkCredentials">checkCredentials</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Kernel.php.html#37"><abbr title="App\Kernel::configureContainer">configureContainer</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/Trick.php.html#172"><abbr title="App\Entity\Trick::addImage">addImage</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/User.php.html#200"><abbr title="App\Entity\User::getRoles">getRoles</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/Image.php.html#44"><abbr title="App\Entity\Image::setFile">setFile</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/Image.php.html#36"><abbr title="App\Entity\Image::getFile">getFile</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Doctrine/HashPasswordListener.php.html#55"><abbr title="App\Doctrine\HashPasswordListener::preUpdate">preUpdate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Doctrine/HashPasswordListener.php.html#42"><abbr title="App\Doctrine\HashPasswordListener::encodePassword">encodePassword</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Doctrine/HashPasswordListener.php.html#32"><abbr title="App\Doctrine\HashPasswordListener::prePersist">prePersist</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controller/Admin/TrickAdminController.php.html#108"><abbr title="App\Controller\Admin\TrickAdminController::delete">delete</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Security/LoginFormAuthenticator.php.html#104"><abbr title="App\Security\LoginFormAuthenticator::supports">supports</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 5.3.2</a> using <a href="https://secure.php.net/" target="_top">PHP 7.2.1</a> with <a href="https://xdebug.org/">Xdebug 2.6.0beta1</a> and <a href="https://phpunit.de/">PHPUnit 6.5.7</a> at Sun Apr 8 13:36:11 UTC 2018.</small>
+    </p>
+   </footer>
+  </div>
+  <script src=".js/jquery.min.js" type="text/javascript"></script>
+  <script src=".js/bootstrap.min.js" type="text/javascript"></script>
+  <script src=".js/holder.min.js" type="text/javascript"></script>
+  <script src=".js/d3.min.js" type="text/javascript"></script>
+  <script src=".js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([35,0,0,0,0,0,0,0,0,0,0,0], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([172,0,0,0,0,0,0,0,0,0,0,0], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,10,"<a href=\"Controller\/Admin\/TrickAdminController.php.html#30\">App\\Controller\\Admin\\TrickAdminController<\/a>"],[0,5,"<a href=\"Controller\/MainController.php.html#18\">App\\Controller\\MainController<\/a>"],[0,2,"<a href=\"Controller\/SecurityController.php.html#22\">App\\Controller\\SecurityController<\/a>"],[0,11,"<a href=\"Controller\/UserController.php.html#22\">App\\Controller\\UserController<\/a>"],[0,2,"<a href=\"DataFixtures\/ORM\/LoadChats.php.html#19\">App\\DataFixtures\\ORM\\LoadChats<\/a>"],[0,1,"<a href=\"DataFixtures\/ORM\/LoadGroups.php.html#19\">App\\DataFixtures\\ORM\\LoadGroups<\/a>"],[0,2,"<a href=\"DataFixtures\/ORM\/LoadTricks.php.html#14\">App\\DataFixtures\\ORM\\LoadTricks<\/a>"],[0,2,"<a href=\"DataFixtures\/ORM\/LoadUsers.php.html#14\">App\\DataFixtures\\ORM\\LoadUsers<\/a>"],[0,8,"<a href=\"Doctrine\/HashPasswordListener.php.html#18\">App\\Doctrine\\HashPasswordListener<\/a>"],[0,16,"<a href=\"Entity\/Chat.php.html#11\">App\\Entity\\Chat<\/a>"],[0,11,"<a href=\"Entity\/Image.php.html#14\">App\\Entity\\Image<\/a>"],[0,27,"<a href=\"Entity\/Trick.php.html#13\">App\\Entity\\Trick<\/a>"],[0,5,"<a href=\"Entity\/TrickGroup.php.html#10\">App\\Entity\\TrickGroup<\/a>"],[0,23,"<a href=\"Entity\/User.php.html#16\">App\\Entity\\User<\/a>"],[0,29,"<a href=\"Entity\/Video.php.html#12\">App\\Entity\\Video<\/a>"],[0,9,"<a href=\"EventsListener\/ImageUploadListener.php.html#14\">App\\EventsListener\\ImageUploadListener<\/a>"],[0,2,"<a href=\"Form\/ChatType.php.html#11\">App\\Form\\ChatType<\/a>"],[0,1,"<a href=\"Form\/ForgottenPasswordType.php.html#11\">App\\Form\\ForgottenPasswordType<\/a>"],[0,2,"<a href=\"Form\/ImageType.php.html#11\">App\\Form\\ImageType<\/a>"],[0,2,"<a href=\"Form\/LoginFormType.php.html#11\">App\\Form\\LoginFormType<\/a>"],[0,2,"<a href=\"Form\/ResetPasswordType.php.html#13\">App\\Form\\ResetPasswordType<\/a>"],[0,3,"<a href=\"Form\/TricksFormType.php.html#20\">App\\Form\\TricksFormType<\/a>"],[0,2,"<a href=\"Form\/UserRegistrationFormType.php.html#15\">App\\Form\\UserRegistrationFormType<\/a>"],[0,2,"<a href=\"Form\/VideoType.php.html#11\">App\\Form\\VideoType<\/a>"],[0,11,"<a href=\"Kernel.php.html#11\">App\\Kernel<\/a>"],[0,2,"<a href=\"Migrations\/Version20180315180558.php.html#11\">DoctrineMigrations\\Version20180315180558<\/a>"],[0,2,"<a href=\"Migrations\/Version20180401123039.php.html#11\">DoctrineMigrations\\Version20180401123039<\/a>"],[0,1,"<a href=\"Repository\/ChatRepository.php.html#9\">App\\Repository\\ChatRepository<\/a>"],[0,2,"<a href=\"Repository\/ImageRepository.php.html#9\">App\\Repository\\ImageRepository<\/a>"],[0,2,"<a href=\"Repository\/TrickGroupRepository.php.html#9\">App\\Repository\\TrickGroupRepository<\/a>"],[0,2,"<a href=\"Repository\/TricksRepository.php.html#9\">App\\Repository\\TricksRepository<\/a>"],[0,2,"<a href=\"Repository\/UserRepository.php.html#9\">App\\Repository\\UserRepository<\/a>"],[0,1,"<a href=\"Repository\/VideoRepository.php.html#9\">App\\Repository\\VideoRepository<\/a>"],[0,10,"<a href=\"Security\/LoginFormAuthenticator.php.html#30\">App\\Security\\LoginFormAuthenticator<\/a>"],[0,3,"<a href=\"Service\/FileUploader.php.html#9\">App\\Service\\FileUploader<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"Controller\/Admin\/TrickAdminController.php.html#33\">App\\Controller\\Admin\\TrickAdminController::indexAction<\/a>"],[0,3,"<a href=\"Controller\/Admin\/TrickAdminController.php.html#44\">App\\Controller\\Admin\\TrickAdminController::newAction<\/a>"],[0,4,"<a href=\"Controller\/Admin\/TrickAdminController.php.html#77\">App\\Controller\\Admin\\TrickAdminController::editAction<\/a>"],[0,2,"<a href=\"Controller\/Admin\/TrickAdminController.php.html#108\">App\\Controller\\Admin\\TrickAdminController::delete<\/a>"],[0,1,"<a href=\"Controller\/MainController.php.html#23\">App\\Controller\\MainController::homepage<\/a>"],[0,4,"<a href=\"Controller\/MainController.php.html#44\">App\\Controller\\MainController::showAction<\/a>"],[0,1,"<a href=\"Controller\/SecurityController.php.html#29\">App\\Controller\\SecurityController::loginAction<\/a>"],[0,1,"<a href=\"Controller\/SecurityController.php.html#51\">App\\Controller\\SecurityController::logoutAction<\/a>"],[0,3,"<a href=\"Controller\/UserController.php.html#29\">App\\Controller\\UserController::registerAction<\/a>"],[0,1,"<a href=\"Controller\/UserController.php.html#68\">App\\Controller\\UserController::generateUniqueFileName<\/a>"],[0,4,"<a href=\"Controller\/UserController.php.html#82\">App\\Controller\\UserController::forgottenPassword<\/a>"],[0,3,"<a href=\"Controller\/UserController.php.html#140\">App\\Controller\\UserController::resetPassword<\/a>"],[0,1,"<a href=\"DataFixtures\/ORM\/LoadChats.php.html#21\">App\\DataFixtures\\ORM\\LoadChats::load<\/a>"],[0,1,"<a href=\"DataFixtures\/ORM\/LoadChats.php.html#43\">App\\DataFixtures\\ORM\\LoadChats::getDependencies<\/a>"],[0,1,"<a href=\"DataFixtures\/ORM\/LoadGroups.php.html#21\">App\\DataFixtures\\ORM\\LoadGroups::load<\/a>"],[0,1,"<a href=\"DataFixtures\/ORM\/LoadTricks.php.html#17\">App\\DataFixtures\\ORM\\LoadTricks::load<\/a>"],[0,1,"<a href=\"DataFixtures\/ORM\/LoadTricks.php.html#128\">App\\DataFixtures\\ORM\\LoadTricks::getDependencies<\/a>"],[0,1,"<a href=\"DataFixtures\/ORM\/LoadUsers.php.html#18\">App\\DataFixtures\\ORM\\LoadUsers::__construct<\/a>"],[0,1,"<a href=\"DataFixtures\/ORM\/LoadUsers.php.html#23\">App\\DataFixtures\\ORM\\LoadUsers::load<\/a>"],[0,1,"<a href=\"Doctrine\/HashPasswordListener.php.html#22\">App\\Doctrine\\HashPasswordListener::__construct<\/a>"],[0,1,"<a href=\"Doctrine\/HashPasswordListener.php.html#27\">App\\Doctrine\\HashPasswordListener::getSubscribedEvents<\/a>"],[0,2,"<a href=\"Doctrine\/HashPasswordListener.php.html#32\">App\\Doctrine\\HashPasswordListener::prePersist<\/a>"],[0,2,"<a href=\"Doctrine\/HashPasswordListener.php.html#42\">App\\Doctrine\\HashPasswordListener::encodePassword<\/a>"],[0,2,"<a href=\"Doctrine\/HashPasswordListener.php.html#55\">App\\Doctrine\\HashPasswordListener::preUpdate<\/a>"],[0,1,"<a href=\"Entity\/Chat.php.html#42\">App\\Entity\\Chat::__construct<\/a>"],[0,1,"<a href=\"Entity\/Chat.php.html#51\">App\\Entity\\Chat::addUser<\/a>"],[0,1,"<a href=\"Entity\/Chat.php.html#57\">App\\Entity\\Chat::removeUser<\/a>"],[0,1,"<a href=\"Entity\/Chat.php.html#65\">App\\Entity\\Chat::getUser<\/a>"],[0,1,"<a href=\"Entity\/Chat.php.html#73\">App\\Entity\\Chat::setUser<\/a>"],[0,1,"<a href=\"Entity\/Chat.php.html#82\">App\\Entity\\Chat::getId<\/a>"],[0,1,"<a href=\"Entity\/Chat.php.html#90\">App\\Entity\\Chat::setId<\/a>"],[0,1,"<a href=\"Entity\/Chat.php.html#98\">App\\Entity\\Chat::getMessage<\/a>"],[0,1,"<a href=\"Entity\/Chat.php.html#106\">App\\Entity\\Chat::setMessage<\/a>"],[0,1,"<a href=\"Entity\/Chat.php.html#118\">App\\Entity\\Chat::setDate<\/a>"],[0,1,"<a href=\"Entity\/Chat.php.html#128\">App\\Entity\\Chat::getDate<\/a>"],[0,1,"<a href=\"Entity\/Chat.php.html#136\">App\\Entity\\Chat::setTrick<\/a>"],[0,1,"<a href=\"Entity\/Chat.php.html#144\">App\\Entity\\Chat::getTrick<\/a>"],[0,1,"<a href=\"Entity\/Chat.php.html#152\">App\\Entity\\Chat::addTrick<\/a>"],[0,1,"<a href=\"Entity\/Chat.php.html#157\">App\\Entity\\Chat::removeTrick<\/a>"],[0,1,"<a href=\"Entity\/Chat.php.html#162\">App\\Entity\\Chat::__toString<\/a>"],[0,2,"<a href=\"Entity\/Image.php.html#36\">App\\Entity\\Image::getFile<\/a>"],[0,2,"<a href=\"Entity\/Image.php.html#44\">App\\Entity\\Image::setFile<\/a>"],[0,1,"<a href=\"Entity\/Image.php.html#60\">App\\Entity\\Image::getId<\/a>"],[0,1,"<a href=\"Entity\/Image.php.html#68\">App\\Entity\\Image::setId<\/a>"],[0,1,"<a href=\"Entity\/Image.php.html#76\">App\\Entity\\Image::getUrl<\/a>"],[0,1,"<a href=\"Entity\/Image.php.html#84\">App\\Entity\\Image::setUrl<\/a>"],[0,1,"<a href=\"Entity\/Image.php.html#92\">App\\Entity\\Image::getTrick<\/a>"],[0,1,"<a href=\"Entity\/Image.php.html#100\">App\\Entity\\Image::setTrick<\/a>"],[0,1,"<a href=\"Entity\/Image.php.html#105\">App\\Entity\\Image::__toString<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#26\">App\\Entity\\Trick::getSlug<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#34\">App\\Entity\\Trick::setSlug<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#76\">App\\Entity\\Trick::getDate<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#84\">App\\Entity\\Trick::setDate<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#103\">App\\Entity\\Trick::__construct<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#115\">App\\Entity\\Trick::getVideos<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#123\">App\\Entity\\Trick::setVideos<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#128\">App\\Entity\\Trick::addVideo<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#134\">App\\Entity\\Trick::removeVideo<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#142\">App\\Entity\\Trick::getChats<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#150\">App\\Entity\\Trick::setChats<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#159\">App\\Entity\\Trick::getImages<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#167\">App\\Entity\\Trick::setImages<\/a>"],[0,2,"<a href=\"Entity\/Trick.php.html#172\">App\\Entity\\Trick::addImage<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#183\">App\\Entity\\Trick::removeImage<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#191\">App\\Entity\\Trick::getId<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#199\">App\\Entity\\Trick::setId<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#207\">App\\Entity\\Trick::getTitle<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#215\">App\\Entity\\Trick::setTitle<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#223\">App\\Entity\\Trick::getContent<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#231\">App\\Entity\\Trick::setContent<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#239\">App\\Entity\\Trick::getUser<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#247\">App\\Entity\\Trick::setUser<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#255\">App\\Entity\\Trick::getTrickGroup<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#263\">App\\Entity\\Trick::setTrickGroup<\/a>"],[0,1,"<a href=\"Entity\/Trick.php.html#276\">App\\Entity\\Trick::__toString<\/a>"],[0,1,"<a href=\"Entity\/TrickGroup.php.html#22\">App\\Entity\\TrickGroup::getId<\/a>"],[0,1,"<a href=\"Entity\/TrickGroup.php.html#30\">App\\Entity\\TrickGroup::setId<\/a>"],[0,1,"<a href=\"Entity\/TrickGroup.php.html#38\">App\\Entity\\TrickGroup::getName<\/a>"],[0,1,"<a href=\"Entity\/TrickGroup.php.html#46\">App\\Entity\\TrickGroup::setName<\/a>"],[0,1,"<a href=\"Entity\/TrickGroup.php.html#56\">App\\Entity\\TrickGroup::__toString<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#74\">App\\Entity\\User::__construct<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#83\">App\\Entity\\User::getChats<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#89\">App\\Entity\\User::addChat<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#96\">App\\Entity\\User::removeChat<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#104\">App\\Entity\\User::getResetToken<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#112\">App\\Entity\\User::setResetToken<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#121\">App\\Entity\\User::getPlainPassword<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#128\">App\\Entity\\User::setPlainPassword<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#133\">App\\Entity\\User::getPassword<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#140\">App\\Entity\\User::getId<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#147\">App\\Entity\\User::setId<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#154\">App\\Entity\\User::getUsername<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#161\">App\\Entity\\User::setPassword<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#168\">App\\Entity\\User::setUsername<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#175\">App\\Entity\\User::getEmail<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#182\">App\\Entity\\User::setEmail<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#189\">App\\Entity\\User::getAvatar<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#196\">App\\Entity\\User::setAvatar<\/a>"],[0,2,"<a href=\"Entity\/User.php.html#200\">App\\Entity\\User::getRoles<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#208\">App\\Entity\\User::setRoles<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#212\">App\\Entity\\User::getSalt<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#216\">App\\Entity\\User::eraseCredentials<\/a>"],[0,1,"<a href=\"Entity\/Video.php.html#56\">App\\Entity\\Video::__construct<\/a>"],[0,1,"<a href=\"Entity\/Video.php.html#64\">App\\Entity\\Video::getTrick<\/a>"],[0,1,"<a href=\"Entity\/Video.php.html#72\">App\\Entity\\Video::setTrick<\/a>"],[0,1,"<a href=\"Entity\/Video.php.html#80\">App\\Entity\\Video::getId<\/a>"],[0,1,"<a href=\"Entity\/Video.php.html#88\">App\\Entity\\Video::setId<\/a>"],[0,1,"<a href=\"Entity\/Video.php.html#96\">App\\Entity\\Video::getType<\/a>"],[0,1,"<a href=\"Entity\/Video.php.html#104\">App\\Entity\\Video::setType<\/a>"],[0,1,"<a href=\"Entity\/Video.php.html#112\">App\\Entity\\Video::getIdentif<\/a>"],[0,1,"<a href=\"Entity\/Video.php.html#120\">App\\Entity\\Video::setIdentif<\/a>"],[0,1,"<a href=\"Entity\/Video.php.html#128\">App\\Entity\\Video::getDate<\/a>"],[0,1,"<a href=\"Entity\/Video.php.html#136\">App\\Entity\\Video::setDate<\/a>"],[0,1,"<a href=\"Entity\/Video.php.html#144\">App\\Entity\\Video::getUrl<\/a>"],[0,1,"<a href=\"Entity\/Video.php.html#152\">App\\Entity\\Video::setUrl<\/a>"],[0,1,"<a href=\"Entity\/Video.php.html#158\">App\\Entity\\Video::youtubeId<\/a>"],[0,1,"<a href=\"Entity\/Video.php.html#166\">App\\Entity\\Video::dailymotionId<\/a>"],[0,1,"<a href=\"Entity\/Video.php.html#177\">App\\Entity\\Video::vimeoId<\/a>"],[0,4,"<a href=\"Entity\/Video.php.html#193\">App\\Entity\\Video::extractIdentif<\/a>"],[0,4,"<a href=\"Entity\/Video.php.html#206\">App\\Entity\\Video::url<\/a>"],[0,4,"<a href=\"Entity\/Video.php.html#226\">App\\Entity\\Video::image<\/a>"],[0,1,"<a href=\"Entity\/Video.php.html#250\">App\\Entity\\Video::video<\/a>"],[0,1,"<a href=\"EventsListener\/ImageUploadListener.php.html#18\">App\\EventsListener\\ImageUploadListener::__construct<\/a>"],[0,1,"<a href=\"EventsListener\/ImageUploadListener.php.html#23\">App\\EventsListener\\ImageUploadListener::prePersist<\/a>"],[0,1,"<a href=\"EventsListener\/ImageUploadListener.php.html#30\">App\\EventsListener\\ImageUploadListener::preUpdate<\/a>"],[0,3,"<a href=\"EventsListener\/ImageUploadListener.php.html#40\">App\\EventsListener\\ImageUploadListener::uploadFile<\/a>"],[0,3,"<a href=\"EventsListener\/ImageUploadListener.php.html#69\">App\\EventsListener\\ImageUploadListener::postLoad<\/a>"],[0,1,"<a href=\"Form\/ChatType.php.html#13\">App\\Form\\ChatType::buildForm<\/a>"],[0,1,"<a href=\"Form\/ChatType.php.html#22\">App\\Form\\ChatType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/ForgottenPasswordType.php.html#13\">App\\Form\\ForgottenPasswordType::buildForm<\/a>"],[0,1,"<a href=\"Form\/ImageType.php.html#13\">App\\Form\\ImageType::buildForm<\/a>"],[0,1,"<a href=\"Form\/ImageType.php.html#23\">App\\Form\\ImageType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/LoginFormType.php.html#13\">App\\Form\\LoginFormType::buildForm<\/a>"],[0,1,"<a href=\"Form\/LoginFormType.php.html#21\">App\\Form\\LoginFormType::getBlockPrefix<\/a>"],[0,1,"<a href=\"Form\/ResetPasswordType.php.html#15\">App\\Form\\ResetPasswordType::buildForm<\/a>"],[0,1,"<a href=\"Form\/ResetPasswordType.php.html#25\">App\\Form\\ResetPasswordType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/TricksFormType.php.html#22\">App\\Form\\TricksFormType::buildForm<\/a>"],[0,1,"<a href=\"Form\/TricksFormType.php.html#29\">App\\Form\\TricksFormType::anonymousFunction:29#242<\/a>"],[0,1,"<a href=\"Form\/TricksFormType.php.html#53\">App\\Form\\TricksFormType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/UserRegistrationFormType.php.html#17\">App\\Form\\UserRegistrationFormType::buildForm<\/a>"],[0,1,"<a href=\"Form\/UserRegistrationFormType.php.html#31\">App\\Form\\UserRegistrationFormType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/VideoType.php.html#13\">App\\Form\\VideoType::buildForm<\/a>"],[0,1,"<a href=\"Form\/VideoType.php.html#22\">App\\Form\\VideoType::configureOptions<\/a>"],[0,1,"<a href=\"Kernel.php.html#17\">App\\Kernel::getCacheDir<\/a>"],[0,1,"<a href=\"Kernel.php.html#22\">App\\Kernel::getLogDir<\/a>"],[0,4,"<a href=\"Kernel.php.html#27\">App\\Kernel::registerBundles<\/a>"],[0,2,"<a href=\"Kernel.php.html#37\">App\\Kernel::configureContainer<\/a>"],[0,3,"<a href=\"Kernel.php.html#50\">App\\Kernel::configureRoutes<\/a>"],[0,1,"<a href=\"Migrations\/Version20180315180558.php.html#13\">DoctrineMigrations\\Version20180315180558::up<\/a>"],[0,1,"<a href=\"Migrations\/Version20180315180558.php.html#24\">DoctrineMigrations\\Version20180315180558::down<\/a>"],[0,1,"<a href=\"Migrations\/Version20180401123039.php.html#13\">DoctrineMigrations\\Version20180401123039::up<\/a>"],[0,1,"<a href=\"Migrations\/Version20180401123039.php.html#21\">DoctrineMigrations\\Version20180401123039::down<\/a>"],[0,1,"<a href=\"Repository\/ChatRepository.php.html#11\">App\\Repository\\ChatRepository::__construct<\/a>"],[0,1,"<a href=\"Repository\/ImageRepository.php.html#11\">App\\Repository\\ImageRepository::__construct<\/a>"],[0,1,"<a href=\"Repository\/ImageRepository.php.html#17\">App\\Repository\\ImageRepository::findImage<\/a>"],[0,1,"<a href=\"Repository\/TrickGroupRepository.php.html#11\">App\\Repository\\TrickGroupRepository::__construct<\/a>"],[0,1,"<a href=\"Repository\/TrickGroupRepository.php.html#17\">App\\Repository\\TrickGroupRepository::AlphabeticalOrder<\/a>"],[0,1,"<a href=\"Repository\/TricksRepository.php.html#11\">App\\Repository\\TricksRepository::__construct<\/a>"],[0,1,"<a href=\"Repository\/TricksRepository.php.html#17\">App\\Repository\\TricksRepository::findAllById<\/a>"],[0,1,"<a href=\"Repository\/UserRepository.php.html#11\">App\\Repository\\UserRepository::__construct<\/a>"],[0,1,"<a href=\"Repository\/UserRepository.php.html#17\">App\\Repository\\UserRepository::findUserByEmail<\/a>"],[0,1,"<a href=\"Repository\/VideoRepository.php.html#11\">App\\Repository\\VideoRepository::__construct<\/a>"],[0,1,"<a href=\"Security\/LoginFormAuthenticator.php.html#39\">App\\Security\\LoginFormAuthenticator::__construct<\/a>"],[0,1,"<a href=\"Security\/LoginFormAuthenticator.php.html#47\">App\\Security\\LoginFormAuthenticator::getCredentials<\/a>"],[0,1,"<a href=\"Security\/LoginFormAuthenticator.php.html#65\">App\\Security\\LoginFormAuthenticator::getUser<\/a>"],[0,2,"<a href=\"Security\/LoginFormAuthenticator.php.html#75\">App\\Security\\LoginFormAuthenticator::checkCredentials<\/a>"],[0,1,"<a href=\"Security\/LoginFormAuthenticator.php.html#86\">App\\Security\\LoginFormAuthenticator::getLoginUrl<\/a>"],[0,2,"<a href=\"Security\/LoginFormAuthenticator.php.html#92\">App\\Security\\LoginFormAuthenticator::onAuthenticationSuccess<\/a>"],[0,2,"<a href=\"Security\/LoginFormAuthenticator.php.html#104\">App\\Security\\LoginFormAuthenticator::supports<\/a>"],[0,1,"<a href=\"Service\/FileUploader.php.html#13\">App\\Service\\FileUploader::__construct<\/a>"],[0,1,"<a href=\"Service\/FileUploader.php.html#18\">App\\Service\\FileUploader::upload<\/a>"],[0,1,"<a href=\"Service\/FileUploader.php.html#27\">App\\Service\\FileUploader::getTargetDirectory<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

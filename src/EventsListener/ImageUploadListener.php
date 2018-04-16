@@ -3,6 +3,7 @@
 
 namespace App\EventsListener;
 
+use App\Entity\Image;
 use App\Entity\Trick;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -31,39 +32,23 @@ class ImageUploadListener
         $entity = $args->getEntity();
 
 
-        dump('preupdate');
-
         $this->uploadFile($entity);
     }
 
     private function uploadFile($entity)
-   {
-        dump('upload');
-        if (!$entity instanceof Trick) {
+    {
+
+        if (!$entity instanceof Image) {
             return;
         }
-        foreach ($entity->getImages() as $image) {
-            dump('check image');
 
-            if ($image->getFile() instanceof UploadedFile) {
-                dump('new upload');
-                $fileName = $this->uploader->upload($image->getFile());
-                $image->setUrl($fileName);
 
-            }
+        if ($entity->getFile() instanceof UploadedFile) {
+
+            $fileName = $this->uploader->upload($entity->getFile());
+            $entity->setUrl($fileName);
+
         }
-////        if (!$entity instanceof Trick ) {
-////            return;
-////        }
-//
-//        $file = $entity->getImages();
-//
-//        if ($file instanceof UploadedFile) {
-//            $fileName = $this->uploader->upload($file);
-//            $entity->setImages($fileName);
-//        }
-
-
     }
 
     public function postLoad(LifecycleEventArgs $args)

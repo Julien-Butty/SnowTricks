@@ -7,32 +7,37 @@ $brand-primary: darken(#428bca, 20%);
 
 .barre {
   display: inline;
-  border-right: 1px solid gray; }
+  border-right: 1px solid gray;
+}
 
 /*Pour enlever la barre sur le dernier élément */
 .page_item page-item-20 {
-  border-right: none; }
+  border-right: none;
+}
 
 .thumbnail {
-  position: relative; }
+  position: relative;
+}
 
 .caption {
   position: absolute;
   top: 45%;
   left: 0;
-  width: 100%; }
+  width: 100%;
+}
 
 .imgBack {
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  height: 90vh;}
+}
 
 .img-thumbnail {
   border: none;
   padding: 0px; }
 
 .textShad {
-  text-shadow: 1px 1px 2px black, 0 0 25px orange, 0 0 5px white;
+  text-shadow: 1px 1px 2px black, 0 0 25px #23c1b3, 0 0 5px white;
+  color: linear-gradient(-15deg,#1765a7 20%,#77b4b3,#f1d652);
 }
 
 .overlay {
@@ -44,6 +49,66 @@ $brand-primary: darken(#428bca, 20%);
   width: 80vw;
 }
 
-body {
+body, nav {
   position: relative;
+ background-color: #222629;
 }
+
+.nav-link, .navbar-brand{
+  color: #23c1b3 !important;
+}
+a {
+color: #23c1b3;
+}
+
+.card-body {
+  background-color:#474b4f ;
+}
+.btn {
+  background-color: #23c1b3;
+}
+
+footer {
+  background-color: #474b4f;
+}
+
+
+
+.thumbnail #del1 {
+  diplay: block;
+  position: absolute;
+  top: 3px;
+  right:50px;
+  color: #222629;
+}
+.thumbnail #del2 {
+  display:block;
+  position:absolute;
+  top:3px;
+  right:3px;
+}
+
+#editBtn {
+  color: #222629;
+}
+
+#chatbox {
+  background-color: turquoise;
+}
+
+.gradient-background {
+  background: linear-gradient(-15deg, #1765a7 20%, #77b4b3, #f1d652);
+  padding: 5px 0;
+  height: 80px;
+}
+
+.gradient-line {
+  background: linear-gradient(-15deg, #1765a7 20%, #77b4b3, #f1d652);
+
+}
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
+

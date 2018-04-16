@@ -65,6 +65,28 @@ class Trick
     private $slug;
 
     /**
+     * @var
+     * @ORM\Column(type="datetime")
+     */
+    private $date;
+
+    /**
+     * @return mixed
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param mixed $date
+     */
+    public function setDate($date): void
+    {
+        $this->date = $date;
+    }
+
+    /**
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="App\Entity\Video", mappedBy="trick", cascade={"persist"}, orphanRemoval=true)
      */
@@ -83,6 +105,7 @@ class Trick
         $this->chats = new ArrayCollection();
         $this->images = new ArrayCollection();
         $this->videos = new ArrayCollection();
+        $this->date = new \DateTime();
 
     }
 
@@ -148,6 +171,9 @@ class Trick
 
     public function addImage(Image $image)
     {
+        if ($this->images->contains($image)) {
+            return;
+        }
         $this->images[] = $image;
         $image->setTrick($this);
 
@@ -243,6 +269,14 @@ class Trick
      * @ORM\ManyToOne(targetEntity="App\Entity\TrickGroup")
      */
     private $trickGroup;
+
+    /**
+     * @return mixed
+     */
+    public function __toString()
+    {
+      return $this->getDate();
+    }
 
 
 }

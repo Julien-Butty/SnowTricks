@@ -17,71 +17,7 @@
 {% block javascript %}
     {{ parent() }}
     <script>
-        jQuery(document).ready(function () {
-            var $collectionHolder;
 
-            var $addImageLink = $('<a href="#" class="add_image_link">Ajouter une image</a>');
-            var $newLinkLi = $('<div></div>').append($addImageLink);
-
-            var $collectionVideo;
-
-            var $addVideoLink = $('<a href="#" class="add_video_link">Ajouter une video</a>');
-            var $newLinkLi2 = $('<div></div>').append($addVideoLink);
-
-            $collectionHolder = $('#tricks_form_images');
-
-            $collectionHolder.append($newLinkLi);
-
-            $collectionHolder.data('index', $collectionHolder.find(':input').length);
-
-            $addImageLink.on('click', function (e) {
-                e.preventDefault();
-
-                addItemForm($collectionHolder, $newLinkLi);
-
-            });
-
-            function addItemForm($collectionHolder, $newLinkLi) {
-
-                var prototype = $collectionHolder.data('prototype');
-
-                var index = $collectionHolder.data('index');
-
-                var newForm = prototype.replace(/__name__/g, index);
-
-                $collectionHolder.data('index', index + 1);
-
-                var $newFormLi = $('<div></div>').append(newForm);
-
-                $newFormLi.append('<a href="#" class="remove-image">x</a>');
-
-                $newLinkLi.before($newFormLi);
-
-                $('.remove-image').click(function (e) {
-                    e.preventDefault();
-                    $(this).parent().remove();
-
-                    return false
-
-                })
-            }
-
-
-            $collectionVideo = $('#tricks_form_videos');
-
-            $collectionVideo.append($newLinkLi2);
-
-            $collectionVideo.data('index', $collectionVideo.find(':input').length);
-
-            $addVideoLink.on('click', function (e) {
-                e.preventDefault();
-
-                addItemForm($collectionVideo, $newLinkLi2);
-
-            });
-
-
-        })
     </script>
 
 

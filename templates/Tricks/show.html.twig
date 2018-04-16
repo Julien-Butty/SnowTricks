@@ -3,36 +3,38 @@
 {% block title %}Trick : {{ trick.title }}{% endblock %}
 
 {% block body %}
-    <div class="container  border border-dark">
+
+    <div class="container rounded border border-success bg-light pt-5 mt-5">
 
         <!--  Image à la une -->
         <div class="thumbnail text-center">
 
 
             {% if trick.images.first %}
-                <img src="{{ asset('uploads/images/'~trick.images.first.url) }}" alt="">
+                <img class="img-fluid"style="width: 1200px; height: 600px;"
+                     src="{{ asset('uploads/images/'~trick.images.first.url)| imagine_filter('show') }}" alt="Responsive Image">
             {% else %}
-                <img src="{{ asset('img/trick/snowboarder.jpg') }}" class="img-fluid mb-5 imgBack"
+                <img src="{{ asset('img/trick/snowboarder.jpg') | imagine_filter('show') }}"
+                     class="img-fluid mb-5 imgBack"
                      alt="Responsive image">
             {% endif %}
-            <div class="caption">
-                <h1 class="font-italic text-dark textShad">{{ trick.title }}</h1>
+
+            <a href="{{ path('admin_trick_edit', {'slug':trick.slug}) }}" class=" mt-1" id="del1"><i
+                        class="btn fa fa-pencil"></i></a>
+            <a href="#" class="mt-1" id="del2">{{ include('Admin/Trick/delete_form.html.twig') }}</a>
+
+            <div class="caption bg-light" style="opacity: 0.9;">
+                <h1 class="font-italic text-black textShad">{{ trick.title }}</h1>
             </div>
         </div>
 
-
-        <div class="container mt-5 mb-5">
-            <div class="text-center">
-                {{ include('Admin/Trick/delete_form.html.twig') }}
-            </div>
-        </div>
 
         <!-- Boucle images -->
-        <div class="d-flex justify-content-around pt-5">
+        <div class="d-flex justify-content-around mt-5 ">
             {% for image in trick.images %}
 
             <div class="card mb-3 " style="width: 10rem;">
-                <img class="card-img-top  "
+                <img class="card-img-top" "
                      src="{{ asset('uploads/images/'~image.url)|imagine_filter('squared_thumbnail') }}"
                      alt="Card image cap">
             </div>
@@ -44,9 +46,8 @@
             {% endfor %}
         </div>
 
-
         <!-- Boucle video -->
-        <div class="d-flex justify-content-around pt-5">
+        <div class="d-flex justify-content-around ">
             {% for video in trick.videos %}
 
             <div class="card mb-3" style="width: 12rem">
@@ -62,15 +63,21 @@
 
         <!-- Contenu -->
         <div class="container">
+            <h3 class="font-weight-light font-italic">Description:</h3>
+            <hr>
             <p class="justify-content">
                 {{ trick.content | raw }}
             </p>
+            <div class="container">
+                <span class=" p-1 badge badge-primary">{{ trick.trickGroup.name }}</span>
+                <span class="p-1 badge badge-primary">{{ trick.date|date('d-m-Y g:i') }}</span>
 
-            <span class="badge badge-primary">{{ trick.trickGroup.name }}</span>
+            </div>
         </div>
+        <hr>
 
 
-        <div class="container mt-5 mb-5">
+        <div class="container mt-5 mb-5 pb-5">
             {% if is_granted('ROLE_ADMIN') %}
                 {{ form_start(chatForm) }}
                 {{ form_row(chatForm.message) }}
@@ -78,32 +85,36 @@
                 {{ form_end(chatForm) }}
             {% endif %}
 
-            {% for chat in trick.chats %}
-                <div class="media bg-light">
-                    {% if chat.user.avatar %}
-                        <img class="mr-3"
-                             src="{{ asset('uploads/avatars/'~chat.user.avatar) | imagine_filter('avatar') }}"
-                             alt="Generic placeholder image">
-                    {% else %}
-                        <img class="mr-3"
-                             src="{{ asset('img/avatar/defAvatar.png')|imagine_filter('avatar') }}"
-                             alt="Generic placeholder image">
-                    {% endif %}
-                    <div class="media-body">
-                        <div class="d-flex flex-row">
+            <div class="container w-75 pt-5">
+                <h4 class="pb-4">Commentaires</h4>
+                {% for chat in trick.chats %}
+                    <div class="media m-1 rounded">
+                        {% if chat.user.avatar %}
+                            <img class="mr-3"
+                                 src="{{ asset('uploads/avatars/'~chat.user.avatar) | imagine_filter('avatar') }}"
+                                 alt="Generic placeholder image">
+                        {% else %}
+                            <img class="mr-3"
+                                 src="{{ asset('img/avatar/defAvatar.png')|imagine_filter('avatar') }}"
+                                 alt="Generic placeholder image">
+                        {% endif %}
+                        <div class="media-body ">
+                            <div class="d-flex flex-row">
 
-                            <p class="ml-1 font-weight-bold">{{ chat.user.username }}</p>
+                                <p class="ml-1 font-weight-bold">{{ chat.user.username }}</p>
 
 
-                            <p class="ml-1 font-weight-light">{{ chat.date|date('d-m-Y g:i') }}</p>
+                                <p class="ml-1 font-weight-light">{{ chat.date|date('d-m-Y g:i') }}</p>
+                            </div>
+                            <p class=" mb-0">{{ chat.message }}</p>
                         </div>
-                        <p class=" mb-0">{{ chat.message }}</p>
                     </div>
-                </div>
-
-            {% endfor %}
+                    <hr>
+                {% endfor %}
+            </div>
         </div>
     </div>
+
 
 
 {% endblock %}

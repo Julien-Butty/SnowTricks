@@ -14,7 +14,8 @@ class ChatType extends AbstractType
     {
         $builder
             ->add('message', TextareaType::class, [
-                'attr'=> array('class'=> 'justify-content')
+                'attr'=> array('class'=> 'justify-content'),
+                'label'=> 'Ecrire un message:'
             ])
         ;
     }

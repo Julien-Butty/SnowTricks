@@ -34,7 +34,7 @@ class Chat
     private $trick;
 
     /**
-     *@ORM\ManyToOne(targetEntity="App\Entity\User", cascade={"persist"}, inversedBy="chats")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", cascade={"persist"}, inversedBy="chats")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
      */
     private $user;
@@ -75,7 +75,6 @@ class Chat
         $this->user = $user;
     }
 
-
     /**
      * @return mixed
      */
@@ -110,8 +109,6 @@ class Chat
 
     }
 
-
-
     /**
      * @param mixed $date
      */
@@ -119,8 +116,6 @@ class Chat
     {
         $this->date = $date;
     }
-
-
 
     /**
      * @return mixed
@@ -133,7 +128,7 @@ class Chat
     /**
      * @param mixed $trick
      */
-    public function setTrick(Trick $trick ): void
+    public function setTrick(Trick $trick): void
     {
         $this->trick = $trick;
     }
@@ -161,12 +156,7 @@ class Chat
 
     public function __toString()
     {
-       return $this->getDate();
-       return $this->getUser();
-
-
-
+        return $this->getDate();
+        return $this->getUser();
     }
-
-
 }
