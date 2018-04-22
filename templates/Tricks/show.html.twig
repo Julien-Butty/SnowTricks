@@ -30,10 +30,10 @@
 
 
         <!-- Boucle images -->
-        <div class="container mt-5 mb-3">
-            <div class="row justify-content-around">
+        <div class="container-fluid mt-5 mb-3">
+            <div class="row justify-content-between">
                 {% for image in trick.images %}
-                    <div class="col-12 col-md-3">
+                    <div class="col-6 col-md-3  ">
                         <div class="card mb-3 " style="width: 10rem;">
                             <img class="card-img-top"
                             src="{{ asset('uploads/images/'~image.url)|imagine_filter('squared_thumbnail') }}"
@@ -44,7 +44,7 @@
 
                 <!-- Boucle video -->
                 {% for video in trick.videos %}
-                    <div class="col-12 col-md-3" style="width: 12rem">
+                    <div class="col-12 col-md-3" style="width: 10rem">
                         {{ video.video()|raw }}
                     </div>
                 {% endfor %}
