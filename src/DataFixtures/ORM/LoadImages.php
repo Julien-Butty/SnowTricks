@@ -34,10 +34,21 @@ class LoadImages extends Fixture implements DependentFixtureInterface
         $melon->setTrick($this->getReference('Melon'));
         $manager->persist($melon);
 
+        $melon2 = new Image();
+        $melon2->setUrl('Melon2.jpg');
+        $melon2->setTrick($this->getReference('Melon'));
+        $manager->persist($melon2);
+
         $indy = new Image();
         $indy->setUrl('Indy.jpg');
         $indy->setTrick($this->getReference('Indy'));
         $manager->persist($indy);
+
+        $indy2 = new Image();
+        $indy2->setUrl('Indy2.jpg');
+        $indy2->setTrick($this->getReference('Indy'));
+        $manager->persist($indy2);
+
 
         $f720= new Image();
         $f720->setUrl('F720.jpg');
@@ -63,6 +74,18 @@ class LoadImages extends Fixture implements DependentFixtureInterface
         $ollie->setUrl('Ollie.jpg');
         $ollie->setTrick($this->getReference('Ollie'));
         $manager->persist($ollie);
+
+        $method = new Image();
+        $method->setUrl('Method.jpg');
+        $method->setTrick($this->getReference('method'));
+        $manager->persist($method);
+
+        $method2 = new Image();
+        $method2->setUrl('Method2.jpg');
+        $method2->setTrick($this->getReference('method'));
+        $manager->persist($method2);
+
+
 
 
         $manager->flush();

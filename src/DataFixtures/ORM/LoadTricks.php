@@ -16,6 +16,9 @@ class LoadTricks extends Fixture implements DependentFixtureInterface
 
     public function load(ObjectManager $manager)
     {
+        /*
+         * Mute
+         */
         $mute = new Trick();
         $mute->setTrickGroup($this->getReference('group_grab'));
         $mute->setTitle('Mute');
@@ -23,6 +26,9 @@ class LoadTricks extends Fixture implements DependentFixtureInterface
         $manager->persist($mute);
         $this->addReference('Mute', $mute);
 
+        /*
+         * Melon
+         */
         $melon = new Trick();
         $melon->setTrickGroup($this->getReference('group_grab'));
         $melon->setTitle('Melon');
@@ -31,6 +37,9 @@ class LoadTricks extends Fixture implements DependentFixtureInterface
         $this->addReference('Melon', $melon);
 
 
+        /*
+         * Indy
+         */
         $indy = new Trick();
         $indy->setTrickGroup($this->getReference('group_grab'));
         $indy->setTitle('Indy');
@@ -38,6 +47,9 @@ class LoadTricks extends Fixture implements DependentFixtureInterface
         $manager->persist($indy);
         $this->addReference('Indy', $indy);
 
+        /*
+         * f720
+         */
         $f720 = new Trick();
         $f720->setTrickGroup($this->getReference('group_rotation'));
         $f720->setTitle('Frontside 720');
@@ -62,7 +74,9 @@ Au boulot !');
         $manager->persist($f720);
         $this->addReference('F720', $f720);
 
-
+        /*
+         * b180
+         */
         $b180 = new Trick();
         $b180->setTrickGroup($this->getReference('group_rotation'));
         $b180->setTitle('Backside 180');
@@ -79,7 +93,9 @@ Avant d’essayer un 180 back, le mieux est d\'essayer de bien rider en switch p
         $manager->persist($b180);
         $this->addReference('B180', $b180);
 
-
+        /*
+         *  valeflip
+         */
         $valeflip = new Trick();
         $valeflip->setTrickGroup($this->getReference('group_flip'));
         $valeflip->setTitle('Valeflip');
@@ -92,6 +108,9 @@ Le plus simple pour apprendre reste de se lancer, donc je vous conseille d’ess
         $manager->persist($valeflip);
         $this->addReference('Valeflip', $valeflip);
 
+        /*
+         * Cab
+         */
         $cab= new Trick();
         $cab->setTrickGroup($this->getReference('group_slide'));
         $cab->setTitle('Cab 2.7 in Bs Tailslide 2.7 out');
@@ -102,7 +121,9 @@ Si tout marche bien, surtout ne regardez pas derrière vous, mais dirigez vos ye
         $manager->persist($cab);
         $this->addReference('Cab', $cab);
 
-
+        /*
+         * Ollie
+         */
         $ollie = new Trick();
         $ollie->setTrickGroup($this->getReference('group_ollie'));
         $ollie->setTitle('Ollie');
@@ -119,6 +140,58 @@ Si tout marche bien, surtout ne regardez pas derrière vous, mais dirigez vos ye
 Le mieux c’est de commencer à s’entrainer à faire des ollies à plat sur la piste, puis en profitant des petits reliefs de bord de piste. Quand on se sent vraiment  à l’aise, on peut commencer à essayer sur de plus gros sauts (kickers de snowpark par exemple). Ne pas hésiter à être créatif, repérer toute variation de terrain qui peut être un bon spot pour envoyer un ollie, et transformer la montagne en terrain de jeu…');
         $manager->persist($ollie);
         $this->addReference('Ollie', $ollie);
+
+        /*
+         * method Air
+         */
+        $method = new Trick();
+        $method->setTrickGroup($this->getReference('group_old'));
+        $method->setTitle('Method Air');
+        $method->setContent('Cette figure – qui consiste à attraper sa planche d\'une main et le tourner perpendiculairement au sol – est un classique "old school". Il n\'empêche qu\'il est indémodable, avec de vrais ambassadeurs comme Jamie Lynn ou la star Terje Haakonsen. En 2007, ce dernier a même battu le record du monde du "air" le plus haut en s\'élevant à 9,8 mètres au-dessus du kick (sommet d\'un mur d\'une rampe ou autre structure de saut).
+
+');
+        $manager->persist($method);
+        $this->addReference('method', $method);
+
+        /*
+         * Backside Triple Cork 1440
+         */
+        $cork = new Trick();
+        $cork->setTrickGroup($this->getReference('group_rotation'));
+        $cork->setTitle('Backside Triple Cork 1440');
+        $cork->setContent('En langage snowboard, un cork est une rotation horizontale plus ou moins désaxée, selon un mouvement d\'épaules effectué juste au moment du saut. Le tout premier Triple Cork a été plaqué par Mark McMorris en 2011, lequel a récidivé lors des Winter X Games 2012... avant de se faire voler la vedette par Torstein Horgmo, lors de ce même championnat. Le Norvégien réalisa son propre Backside Triple Cork 1440 et obtint la note parfaite de 50/50.');
+        $manager->persist($cork);
+        $this->addReference('cork', $cork);
+
+        /*
+         * Double Mc Twist 1260
+         */
+        $dmc = new Trick();
+        $dmc->setTrickGroup($this->getReference('group_flip'));
+        $dmc->setTitle('Double Mc Twist 1260');
+        $dmc->setContent('Le Mc Twist est un flip (rotation verticale) agrémenté d\'une vrille. Un saut très périlleux réservé aux professionnels. Le champion précoce Shaun White s\'est illustré par un Double Mc Twist 1260 lors de sa session de Half-Pipe aux Jeux Olympiques de Vancouver en 2010. Nul doute que c\'est cette figure qui lui a valu de remporter la médaille d\'or.');
+        $manager->persist($dmc);
+        $this->addReference('dmc', $dmc);
+
+        /*
+         * Double BackFlip One Foot
+         */
+        $dback = new Trick();
+        $dback->setTrickGroup($this->getReference('group_flip'));
+        $dback->setTitle('Double Backflip One Foot');
+        $dback->setContent('Comme on peut le deviner, les "one foot" sont des figures réalisées avec un pied décroché de la fixation. Pendant le saut, le snowboarder doit tendre la jambe du côté dudit pied. L\'esthète Scotty Vine – une sorte de Danny MacAskill du snowboard – en a réalisé un bel exemple avec son Double Backflip One Foot.');
+        $manager->persist($dback);
+        $this->addReference('dback', $dback);
+
+        /*
+         * Double Backside Rodeo
+         */
+        $dbr = new Trick();
+        $dbr->setTrickGroup($this->getReference('group_rotation'));
+        $dbr->setTitle('Double Backside Rodeo 1080');
+        $dbr->setContent('À l\'instar du cork, le rodeo est une rotation désaxée, qui se reconnaît par son aspect vrillé. Un des plus beaux de l\'histoire est sans aucun doute le Double Backside Rodeo 1080 effectué pour la première fois en compétition par le jeune prodige Travis Rice, lors du Icer Air 2007. La pirouette est tellement culte qu\'elle a fini dans un jeu vidéo où Travis Rice est l\'un des personnages.');
+        $manager->persist($dbr);
+        $this->addReference('dbr', $dbr);
 
         $manager->flush();
 

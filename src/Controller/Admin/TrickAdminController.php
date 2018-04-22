@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Class TrickAdminController
  * @package App\Controller\Admin
- * @Security("is_granted('ROLE_MANAGE_TRICKS')")
+ * @Security("is_granted('ROLE_ADMIN')")
  * @Route("/admin/trick")
  *
  */

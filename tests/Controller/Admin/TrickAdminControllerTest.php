@@ -18,7 +18,7 @@ class TrickAdminControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $client->request('GET', '/new');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $client->request('GET', 'admin/trick/new');
+        $this->assertEquals(302, $client->getResponse()->getStatusCode());
     }
 }

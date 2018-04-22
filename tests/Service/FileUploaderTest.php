@@ -26,7 +26,7 @@ class FileUploaderTest extends TestCase
         $uploader = new FileUploader($targetDirectory);
         $result = $uploader->upload($image);
 
-        dump($targetDirectory."/".$result);
+
         $this->assertTrue(file_exists($targetDirectory."/".$result));
 
     }

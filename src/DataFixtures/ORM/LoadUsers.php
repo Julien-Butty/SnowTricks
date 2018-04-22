@@ -30,7 +30,8 @@ class LoadUsers extends Fixture {
         $password = $this->encoder->encodePassword($user1, 'pass_123');
         $user1->setPassword($password);
         $user1->setRoles(['ROLE_ADMIN']);
-        $manager->persist($user1);
+        $user1->setAvatar('juju.jpeg');
+        $manager->persist($user1);;
         $this->addReference('user1', $user1);
 
 

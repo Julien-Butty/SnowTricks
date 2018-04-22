@@ -13,8 +13,8 @@ class MainControllerTest extends WebTestCase
     public function testHomepageLoggedOff()
     {
         $client = static::createClient();
-        $client->request('GET', '/');
-        $crawler = $client->followRedirect();
+        $crawler = $client->request('GET', '/');
+
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals(1,$crawler->filter('html:contains("Sign in")')->count());
     }
