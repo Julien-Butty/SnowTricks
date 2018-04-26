@@ -1,17 +1,39 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container">
+    <div class="gradient-background"></div>
+    <div class="container ">
 
-        <h1>Editez le trick</h1>
+        <h1 class="text-white pt-5">Editez le trick</h1>
+
+        <div class="container-fluid mt-5 mb-3">
+            <div class="row justify-content-between">
+                {% for image in trick.images %}
+                    <div class="col-6 col-md-3  ">
+
+                        <div class="card mb-3 " style="width: 10rem;">
+                            <img class="card-img-top"
+                                 src="{{ asset('uploads/images/'~image.url)|imagine_filter('squared_thumbnail') }}"
+                                 alt="Card image cap">
+
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <!-- Boucle video -->
+                {% for video in trick.videos %}
+                    <div class="col-12 col-md-3" style="width: 10rem">
+                        {{ video.video()|raw }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
         {{ include('Admin/Trick/_form.html.twig') }}
     {% spaceless %}
-        {% for image in trick.images %}
-        {% if image is not null %}
-            <img class="mr-3" src="{{ asset('uploads/images/'~image.url)|imagine_filter('squared_thumbnail') }}" alt="Card image cap">
-            {% endif %}
-            {% endfor %}
+
+
         {% endspaceless %}
+            </div>
     </div>
 {% endblock %}
 {% block javascript %}

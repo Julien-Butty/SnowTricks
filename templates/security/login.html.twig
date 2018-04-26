@@ -19,8 +19,10 @@
 </div>
                 <button type="submit" class="btn btn-success">Connexion <span class="fa fa-lock"></span></button>
                 {{ form_end(form) }}
-                <a href="{{ path('user_register') }}" class="ml-3">S'enregistrer</a>
-                <a href="{{ path('forgotten_password') }}" class="ml-3">Mot de passe oublié</a>
+                <div class="row mt-2">
+                <a class="col-12" href="{{ path('user_register') }}" class="ml-3">S'enregistrer</a>
+                <a class="col-12" href="{{ path('forgotten_password') }}" class="ml-3">Mot de passe oublié</a>
+            </div>
             </div>
         </div>
     </div>

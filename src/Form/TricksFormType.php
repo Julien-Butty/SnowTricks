@@ -31,7 +31,7 @@ class TricksFormType extends AbstractType
                 }
             ])
             ->add('content', CKEditorType::class, [
-                'attr' => array('class' => 'justify-content')
+                'attr' => array('class' => 'form-control justify-content')
             ])
             ->add('images', CollectionType::class, [
                 'entry_type' => ImageType::class,

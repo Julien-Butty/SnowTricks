@@ -91,7 +91,7 @@ class UserController extends Controller
                 return $this->redirectToRoute('homepage');
             }
 
-            $token = base64_encode(random_bytes(10));
+            $token = random_int(1000000,10000000);
 
             $user->setResetToken($token);
             $em->flush();

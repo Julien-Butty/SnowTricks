@@ -3,12 +3,13 @@ liip_imagine:
         default:
             web_path:
                 web_root: "%kernel.root_dir%/../public"
-                cache_prefix: "imagine/cache"
+                cache_prefix: "imagine/cache/"
 
     loaders:
         defaults:
             filesystem:
                 data_root: "%kernel.root_dir%/../public"
+
 
 
     driver:               gd
