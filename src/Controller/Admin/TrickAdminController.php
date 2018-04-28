@@ -22,12 +22,7 @@ use Symfony\Component\HttpFoundation\Response;
 class TrickAdminController extends Controller
 {
 
-    public function indexAction()
-    {
-
-    }
-
-    /**
+     /**
      * @param Request $request
      * @param FileUploader $fileUploader
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
